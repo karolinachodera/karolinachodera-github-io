@@ -1,0 +1,97 @@
+<!doctype html>
+
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+	<title>Karolina Chodera</title>	
+	<link rel="shortcut icon" type="image/ico" href="#"> 
+	<meta name="description" content="Najwspanialsza strona na świecie. Opis pojawiający się pod tytułem strony w wyszukiwarce">
+	<meta name="keywords" content="HTML CSS PowerPoint Masterslides">
+	<meta name="googlebot" content="noarchive">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/screen.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400,800" rel="stylesheet">
+	
+<!--[if lt IE 9]>
+    <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+
+	<![endif]--> <!-- skrypt ładwoany gdy wersje przeglądarki jest niższa niż IE9 -->
+</head>
+<body>
+
+
+	<header>
+		<img src="images/logo.jpg" alt="cho. Karolina Chodera front-end developer">
+	</header>
+	
+	<nav>
+		<ul>
+			<li><a href="#about">O mnie</a></li>
+			<li><a href="#charts">Strony</a></li>
+			<li><a href="#graphic">Grafika</a></li>			
+			<li><a href="#powerpoint">Prezentacje</a></li>
+			<li><a href="#contact">Kontakt</a></li>
+			<li class="icon">☰</li>
+		</ul>
+	</nav>
+	
+	<section class="linked" id="about">
+		<h2>o mnie<span>.</span></h2>
+		<div id="wrapper-photo"><img src="images/photo1.jpg" id="photo" alt="photo Karolina"></div>
+		<p >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut efficitur mauris non tincidunt rutrum. Sed ut arcu finibus, molestie tellus vel, euismod nibh. Etiam sit amet fringilla sem. Praesent vestibulum urna eu viverra lobortis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut ut enim sem. Praesent nec auctor metus, sed semper metus. Fusce non lobortis nunc. Aliquam in justo sed orci cursus eleifend sed et erat. Suspendisse suscipit orci vel justo sagittis euismod. Quisque efficitur gravida nunc sed facilisis. Nunc ultricies faucibus est quis rhoncus. Aliquam et diam auctor, feugiat velit a, sodales eros. Vivamus gravida urna non sodales auctor.
+			Nam gravida id dolor at porta. Maecenas hen</p>
+	</section>
+	
+	<section class="linked" id="charts">
+		<h2>strony<span>.</span></h2>
+		<h4>Coś tam</h4>
+		<div class="chart"></div>
+		<h4>Coś tam</h4>
+		<div class="chart"></div>
+		<h4>Coś tam</h4>
+		<div class="chart"></div>
+	</section>
+	
+	<section class="linked" id="graphic">
+		<h2>grafika<span>.</span></h2>
+		<img class="works" src="images/zapro-2.jpg" alt="Wedding invitation">
+		<img class="works" src="images/balu.jpg" alt="Baluled logo">
+		<img class="works" src="images/przegib.jpg" alt="Przegibek PTTK leaflet">
+		<img class="works" src="images/atopic-logo.jpg" alt="Atopic application logo">
+		<img class="works" src="images/cupcake.jpg" alt="Cupcake logo">
+		<img class="works" src="images/joga.jpg" alt="Black cat joga logo">
+		<img class="works" src="images/logo-k.jpg" alt="Karolina Chodera logo">
+		<img class="works" src="images/atopic.jpg" alt="Atopic application design">
+		<img class="works" src="images/logo-a.jpg" alt="Adam logo">
+		<img class="works" src="images/zapro.jpg" alt="Wedding invitation">
+	</section>
+		
+	<section class="linked" id="powerpoint">
+		<h2>powerPoint<span>.</span></h2>
+	</section>
+	
+	<section class="linked" id="contact">
+		<h2>kontakt<span>.</span></h2>
+		<ul id="social">
+			<li id="name"><a href="#">Karolina Chodera</a></li>
+			<li id="mail"><a href="mailto:#">mail</a></li>
+			<li id="linkedin"><a href="#">LinkedIn</a></li>
+			<li id="git"><a href="#">Github</a></li>
+		</ul>
+		<form action="mailto:#" method="post" id="contact-form">
+			<h3>Skontaktuj się ze mną</h3>
+			<input type="text" name="your-name" placeholder="Imię i nazwisko" data-error="Podaj imię i nazwisko">
+			<input type="email" name="your-email" placeholder="Twój email" data-error="Podaj email">
+			<textarea name="message" placeholder="Wiadomość" data-error="Wpisz wiadomość"></textarea>
+			<button type="submit" id="button-form">Wyślij</button>
+		</form>
+		<div id="map"></div>
+	</section>
+
+</body>
+
+<script src="scripts/script.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDh4JFXBHaNURxDROw9ktLKz1FZzt9OzFs&callback=initMap"
+  async defer>
+</script>
+</html>
