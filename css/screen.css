@@ -423,6 +423,8 @@ input:-webkit-autofill {
 
 #social li {
 	padding: 10px 0;
+	font: 1.5rem Lato;
+	line-height: 1.5rem;
 }
 
 
@@ -439,24 +441,25 @@ section h3 {
 	cursor: pointer;
 }
 
-#social a::before {
+#social li::before {
 	vertical-align: -50%;
 	padding-right: 15px;
 }
 
-#social #name a::before {
+#social #name::before {
 	content: url("../images/name2.png");
 }
 
-#social #mail a::before {
+#social #mail::before {
 	content: url("../images/mail2.png");
 }
 
-#social #git a::before {
+
+#social #git::before {
 	content: url("../images/git2.png");
 }
 
-#social #linkedin a::before {
+#social #linkedin::before {
 	content: url("../images/linkedin2.png");
 }
 

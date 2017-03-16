@@ -103,6 +103,15 @@ console.log(errors);
 	
 }, false);
 
+//mailto
+
+var mailto = document.querySelector("#mail a");
+mailto.addEventListener("mousedown", function () {
+	this.href = this.href.replace("MALPA", "a@g");
+	this.href = this.href.replace("KROPKA", ".");
+	
+}, false);
+
 //fixed nav
 var nav = document.querySelector("nav");
 function scrollNav() {
