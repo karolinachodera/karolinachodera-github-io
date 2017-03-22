@@ -127,7 +127,7 @@ header {
 	margin-top:76px;
 	clear: both;
 	width: 100%;
-	background-image: url("../_img/header.jpg");
+	background-image: url("../images/header.jpg");
 	height: 580px;
     display: flex;
 	justify-content: center;
@@ -269,7 +269,7 @@ h3 {
 
 #separator {
 	box-sizing: border-box;
-	background-image: url("../_img/header.jpg");
+	background-image: url("../images/header.jpg");
 	position: relative;
 	height: 348px;
     background-attachment: fixed;
@@ -443,7 +443,7 @@ h3 {
 }
 
 #contact {
-	background-image: url("../_img/header.jpg");
+	background-image: url("../images/header.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;

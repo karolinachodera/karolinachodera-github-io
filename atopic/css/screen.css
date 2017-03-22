@@ -1,8 +1,3 @@
-@font-face {
-	font-family: Lato;
-	src: url(../_assets/Lato/Lato-Regular.ttf);
-}
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -69,16 +64,9 @@ body, html {
 }
 
 
-/* header { */
-	
-	/* width: 100%; */
-	/* height: 1080px; */
-	/* background: url(../_img/headerlogo.jpg) no-repeat fixed center; */
-/* } */
-
 header {
 	
-	background-image: url("../_img/headerlogo.jpg");
+	background-image: url("../images/headerlogo.jpg");
     height: 100%;
     width: 100%;
     background-attachment: fixed;
@@ -171,7 +159,7 @@ form button {
 }
 
 #second {
-	background-image: url("../_img/header.jpg");
+	background-image: url("../images/header.jpg");
     height: auto;
     width: 100%;
     background-attachment: fixed;
@@ -207,11 +195,6 @@ footer {
 	background: rgba(0,0,0,0.3);
 }
 
-/* #pop { */
-	/* background: url("../_img/pop2.png") no-repeat center bottom; */
-	/* height: 100%; */
-    /* width: 100%; */
-/* } */
 
 header a {
 	display: block;
