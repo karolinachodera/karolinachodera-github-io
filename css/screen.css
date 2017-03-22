@@ -87,6 +87,10 @@ body {
 	overflow: hidden;
 }
 
+::selection {
+    color: white; 
+    background: #d87227;
+}
 
 header img{
 	display: block;
@@ -111,10 +115,8 @@ nav ul {
 
 
 nav ul li {
-
 	float: left;
-	width: 20%;
-	
+	width: calc(100% / 6);	
 }
 
 nav ul a{
@@ -162,6 +164,7 @@ nav ul li:hover {
 	height: 300px;
 	background: #d87227;
 	margin-bottom: 100px;
+	-ms-filter: grayscale(90%);
 	filter: grayscale(90%);
 }
 
@@ -179,9 +182,12 @@ nav ul li:hover {
 	width: 33.33%;
 	float: left;
 	padding: 15px;
+	-ms-filter: grayscale(100%);
 	filter: grayscale(100%);
 	transition: all 0.5s;
 }
+
+
 
 .works:last-of-type {
 	float: none;
@@ -190,10 +196,31 @@ nav ul li:hover {
 }
 
 .works:hover {
+	-ms-filter: none;
 	filter: none;
 	transform: scale(1.1);
 }
 
+.project {
+	display: block;
+	box-sizing: border-box;
+	width: 33.33%;
+	float: left;
+	padding: 15px;
+	-ms-filter: grayscale(100%);
+	filter: grayscale(100%);
+	transition: all 0.5s;
+}
+
+.project img {
+	width: 100%;
+}
+
+.project:hover {
+	-ms-filter: none;
+	filter: none;
+	transform: scale(1.1);
+}
 
 section {
 	clear: both;

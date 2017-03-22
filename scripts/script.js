@@ -12,22 +12,16 @@ function initMap() {
       }
 	  
 //adding button to scroll to top  
-function createButton() {
-	var button = document.createElement("button");
-	button.classList.add("up", "hidden");
-	document.body.appendChild(button);
-	return button;
-}
 
 function animateScroll() {
 	
-	if(document.body.scrollTop > 0) {
+	if(window.scrollY > 0 || document.documentElement.scrollTop > 0) {
 		window.scrollBy(0, -10);
 		setTimeout(animateScroll, 5);
 	}
 }
 
-var button = createButton();
+var button = document.querySelector(".up");
 
 button.addEventListener("click", function(e) {
 	e.stopPropagation();
@@ -37,13 +31,13 @@ button.addEventListener("click", function(e) {
 
 window.addEventListener("scroll", function(e) {
 	
-	if(document.body.scrollTop >= 100) {
+	if(window.scrollY >= 100 ) /*second part for IE */ {
 		button.classList.remove("hidden");
 	} else {
 		button.classList.add("hidden");
 	}
-	
 }, false)
+
 
 //form validation
 var form = document.querySelector("#contact-form");
@@ -117,7 +111,7 @@ var nav = document.querySelector("nav");
 function scrollNav() {
 
 var hHeight = document.querySelector("header").offsetHeight;
-var scroll = window.scrollY;
+var scroll = window.scrollY? window.scrollY : document.documentElement.scrollTop;
 if(scroll >= hHeight) {
 	nav.setAttribute("class", "fixed-nav");
 } else {
@@ -146,7 +140,7 @@ function activeNav() {
 
 var  headings = document.querySelectorAll(".linked");
 for(var i = 0; i < headings.length; i++) {
-	
+	if(window.scrollY) {
 	if(i < headings.length - 1 && window.scrollY >= headings[i].offsetTop - 100 - 56 && window.scrollY < headings[i+1].offsetTop - 100 - 56) {
 		var id = headings[i].getAttribute("id");
 		var selector = "[href='#" + id + "']";
@@ -161,6 +155,24 @@ for(var i = 0; i < headings.length; i++) {
 		var id = headings[i].getAttribute("id");
 		var selector = "[href='#" + id + "']";
 		document.querySelector(selector).classList.remove("active");
+}
+} else {
+	if(i < headings.length - 1 && document.documentElement.scrollTop >= headings[i].offsetTop - 100 - 56 && document.documentElement.scrollTop < headings[i+1].offsetTop - 100 - 56) {
+		var id = headings[i].getAttribute("id");
+		var selector = "[href='#" + id + "']";
+		document.querySelector(selector).classList.add("active");
+		
+	} else if( i === headings.length - 1 && document.documentElement.scrollTop >= headings[i].offsetTop - 100 - 56) {
+		var id = headings[i].getAttribute("id");
+		var selector = "[href='#" + id + "']";
+		document.querySelector(selector).classList.add("active");
+		
+	} else {
+		var id = headings[i].getAttribute("id");
+		var selector = "[href='#" + id + "']";
+		document.querySelector(selector).classList.remove("active");
+}
+	
 }
 }
 }
@@ -183,25 +195,31 @@ for(var i = 0; i < as.length; i++) {
 		var isFixed = nav.classList.contains("fixed-nav");
 		function scr() {
 			if(isFixed === true) {
-				if( window.scrollY  <=  aPos - 10) {
+				if( window.scrollY  <=  aPos - 10 || document.documentElement.scrollTop <= aPos - 10) {
 					window.scrollBy(0, 10);
 					setTimeout(scr, 3);
-				} else if ( window.scrollY >=  aPos + 10) {
+				} else if ( window.scrollY >=  aPos + 10 || document.documentElement.scrollTop >= aPos + 10) {
 					window.scrollBy(0, -10);
 					setTimeout(scr, 3);
-				} else {
+				} else if (window.scrollY){
 					window.scrollTo(window.scrollX, aPos);
+					clearInterval(scr);
+				} else {
+					window.scrollTo(document.documentElement.scrollLeft, aPos);
 					clearInterval(scr);
 				}
 			} else {
-				if( window.scrollY  <=  aPos - 56 - 10) {
+				if( window.scrollY  <=  aPos - 56 - 10 || document.documentElement.scrollTop <= aPos - 56 - 10) {
 					window.scrollBy(0, 10);
 					setTimeout(scr, 3);
-				} else if ( window.scrollY >=  aPos - 56 + 10) {
+				} else if ( window.scrollY >=  aPos - 56 + 10 || document.documentElement.scrollTop <= aPos - 56 + 10) {
 					window.scrollBy(0, -10);
 					setTimeout(scr, 3);
-				} else {
+				} else if (window.scrollY){
 					window.scrollTo(window.scrollX, aPos - 56);
+					clearInterval(scr);
+				} else {
+					window.scrollTo(document.documentElement.scrollLeft, aPos - 56);
 					clearInterval(scr);
 				}
 			}
@@ -213,7 +231,11 @@ for(var i = 0; i < as.length; i++) {
 //start website with #url 100px higher
 function offsetAnchor() {
     if(location.hash.length !== 0) {
+		if (window.scrollY) {
         window.scrollTo(window.scrollX, window.scrollY - 100);
+		} else {
+			window.scrollTo(document.documentElement.scrollLeft, window.scrollY - 100);
+		}
     }
 }
 
@@ -232,7 +254,7 @@ if(window.scrollY >= chartSection.offsetTop - 150) {
 }
 
 window.addEventListener("scroll", function() {
-	if(window.scrollY >= chartSection.offsetTop - 150) {
+	if(window.scrollY >= chartSection.offsetTop - 150 || document.documentElement.scrollTop >= chartSection.offsetTop - 150) {
 		for(var i = 0; i < charts.length; i++) {
 			switch(i) {
 				case 0:
