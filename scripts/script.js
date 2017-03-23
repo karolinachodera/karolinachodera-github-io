@@ -31,7 +31,7 @@ button.addEventListener("click", function(e) {
 
 window.addEventListener("scroll", function(e) {
 	
-	if(window.scrollY >= 100 ) /*second part for IE */ {
+	if(window.scrollY >= 100 || document.documentElement.scrollTop >= 100) /*second part for IE */ {
 		button.classList.remove("hidden");
 	} else {
 		button.classList.add("hidden");
@@ -263,6 +263,10 @@ window.addEventListener("scroll", function() {
 					charts[1].setAttribute("id", "chart2");
 				case 2:
 					charts[2].setAttribute("id", "chart3");
+				case 3:
+					charts[3].setAttribute("id", "chart4");
+				case 4:
+					charts[4].setAttribute("id", "chart5");
 			}
 		}
 	}

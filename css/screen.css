@@ -117,24 +117,24 @@ nav ul {
 nav ul li {
 	float: left;
 	width: calc(100% / 6);	
+	height: 56px;
+	
 }
 
 nav ul a{
 	background: white;
 	display: block;
-	height: 40px;
-	padding: 5px 0;
 	border-top: white 6px solid;
-	line-height: 40px;
 	text-align: center;
 	font: 1.7rem Lato;
+	line-height: 50px;
 	font-weight: bold;
 	text-decoration: none;
 	cursor: pointer;
 	transition: all 0.5s;
 }
 
-nav ul a:hover {
+nav ul li:hover {
 	border-top: #d87227 6px solid;
 }
 
@@ -224,7 +224,6 @@ nav ul li:hover {
 
 section {
 	clear: both;
-	width: 100%;
 	max-width: 1024px;
 	margin: 0px auto;
 	padding: 20px 0px;
@@ -289,6 +288,7 @@ section h2 span {
 	height: 25px;
 	border-radius: 25px;
 	position: relative;
+	margin-bottom: 15px;
 }
 
 .chart::before {
@@ -305,15 +305,23 @@ section h2 span {
 }
 
 .chart#chart1::before {
-	width: 80%;
+	width: 75%;
 }
 
 .chart#chart2::before {
-	width: 60%;
+	width: 30%;
 }
 
 .chart#chart3::before {
-	width: 75%;
+	width: 80%;
+}
+
+.chart#chart4::before {
+	width: 100%;
+}
+
+.chart#chart5::before {
+	width: 100%;
 }
 
 section h4 {
@@ -462,8 +470,6 @@ section h3 {
 }
 
 #social a{
-	font: 1.5rem Lato;
-	line-height: 1.5rem;
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -490,11 +496,24 @@ section h3 {
 	content: url("../images/linkedin2.png");
 }
 
+@media screen and (min-width: 800px) and (max-width: 960px){
+	
+	nav ul li a {
+		font-size: 1.4rem;
+	}
+}
+
 @media screen and (max-width:800px) {
 	.works, .works:last-of-type {
 		width: 50%;
 		float: left;
 	}
+	
+	.project {
+		width: 50%;
+		float: left;
+	}
+	
 	#wrapper-photo {
 		float: none;
 		width: 100%;
@@ -505,8 +524,6 @@ section h3 {
 		width: 100%;
 		box-sizing: border-box;
 		width: 100%;
-		padding-left: 15px;
-		padding-right: 15px;
 		margin-top: 20px;
 	}
 		#contact-form {
@@ -527,9 +544,21 @@ section h3 {
 	section h3 {
 		padding-top: 15px;
 		text-align: center;
+		
+	}
+		nav ul li a {
+		font-size: 1.2rem;
 	}
 
 }
+
+@media screen and (max-width: 1024px) {
+	section {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+}
+
 
 @media screen and (max-width:680px) {
 	nav {
@@ -550,7 +579,10 @@ section h3 {
 		height: 0px;
 		visibility: hidden;
 		opacity: 0;
-		
+	}
+	
+	nav ul li a {
+		font-size: 1.7rem;
 	}
 	
 	nav ul a:hover {
@@ -599,8 +631,6 @@ section h3 {
 		float: none;
 		box-sizing: border-box;
 		width: 100%;
-		padding-left: 15px;
-		padding-right: 15px;
 		margin-top: 20px;
 		
 	}
@@ -615,7 +645,13 @@ section h3 {
 	
 	.works, .works:last-of-type {
 		float: none;
-		width: 80%;
+		width: 95%;
+		margin: 0 auto;
+	}
+	
+	.project {
+		float: none;
+		width: 95%;
 		margin: 0 auto;
 	}
 	
@@ -635,7 +671,8 @@ section h3 {
 	}
 	
 	section h2 {
-		font-size: 3rem;
+		font-size: 2.8rem;
+		letter-spacing: 0.5rem;
 	}
 	
 	section h3 {
@@ -643,5 +680,21 @@ section h3 {
 		text-align: center;
 	}
 	
+	section h4 {
+		font: 1.5rem Lato;
+	}
+	
+	
+}
+
+@media screen and (max-width:480px) {
+	section h2 {
+		font-size: 2rem;
+		letter-spacing: 0.5rem;
+	}
+	
+	#social li {
+		font: 1.2rem Lato;
+	}
 	
 }
