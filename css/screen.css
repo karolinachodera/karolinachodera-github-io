@@ -134,7 +134,7 @@ nav ul a{
 	transition: all 0.5s;
 }
 
-nav ul li:hover {
+nav ul li a:hover {
 	border-top: #d87227 6px solid;
 }
 
@@ -176,11 +176,17 @@ nav ul li:hover {
 	z-index: 99;
 }
 
-.works {
+.flex-row {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.works, .project {
 	display: block;
 	box-sizing: border-box;
 	width: 33.33%;
-	float: left;
+	height: 100%;
 	padding: 15px;
 	-ms-filter: grayscale(100%);
 	filter: grayscale(100%);
@@ -188,39 +194,16 @@ nav ul li:hover {
 }
 
 
-
-.works:last-of-type {
-	float: none;
-	width: 33.33%;
-	margin: 0 auto;
-}
-
-.works:hover {
+.works:hover, .project:hover {
 	-ms-filter: none;
 	filter: none;
 	transform: scale(1.1);
-}
-
-.project {
-	display: block;
-	box-sizing: border-box;
-	width: 33.33%;
-	float: left;
-	padding: 15px;
-	-ms-filter: grayscale(100%);
-	filter: grayscale(100%);
-	transition: all 0.5s;
 }
 
 .project img {
 	width: 100%;
 }
 
-.project:hover {
-	-ms-filter: none;
-	filter: none;
-	transform: scale(1.1);
-}
 
 section {
 	clear: both;
@@ -504,14 +487,8 @@ section h3 {
 }
 
 @media screen and (max-width:800px) {
-	.works, .works:last-of-type {
+	.works, .project {
 		width: 50%;
-		float: left;
-	}
-	
-	.project {
-		width: 50%;
-		float: left;
 	}
 	
 	#wrapper-photo {
@@ -640,20 +617,12 @@ section h3 {
 		float: none;
 		width: 100%;
 	}
-	
-
-	
-	.works, .works:last-of-type {
-		float: none;
+		
+	.works, .project {
 		width: 95%;
 		margin: 0 auto;
 	}
 	
-	.project {
-		float: none;
-		width: 95%;
-		margin: 0 auto;
-	}
 	
 	#contact-form {
 		width: 100%;
