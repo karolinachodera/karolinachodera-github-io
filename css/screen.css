@@ -117,22 +117,22 @@ nav ul {
 nav ul li {
 	float: left;
 	width: calc(100% / 6);	
-	height: 56px;
-	
-}
-
-nav ul a{
-	background: white;
-	display: block;
-	border-top: white 6px solid;
 	text-align: center;
 	font: 1.7rem Lato;
 	line-height: 50px;
 	font-weight: bold;
+	
+}
+
+nav ul a {
+	background: white;
+	display: block;
+	border-top: white 6px solid;
 	text-decoration: none;
 	cursor: pointer;
 	transition: all 0.5s;
 }
+
 
 nav ul li a:hover {
 	border-top: #d87227 6px solid;
@@ -148,13 +148,8 @@ nav ul li:hover {
 	
 .icon {
 	display: none;
-	font-size: 1.7rem;
-	text-align: center;
-	height: 40px;
-	padding: 5px 0;
+	height: 50px;
 	border-top: white 6px solid;
-	line-height: 40px;
-	font-weight: bold;
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -234,13 +229,10 @@ section p {
 	overflow: hidden;
 }
 
-
-
 #about img {
 	display: block;
 	width: 100%;
 }
-
 
 #about p {
 	width: 65%;
@@ -503,7 +495,7 @@ section h3 {
 		width: 100%;
 		margin-top: 20px;
 	}
-		#contact-form {
+	#contact-form {
 		width: 100%;
 		float: none;
 	}
@@ -523,7 +515,8 @@ section h3 {
 		text-align: center;
 		
 	}
-		nav ul li a {
+	
+	nav ul li a {
 		font-size: 1.2rem;
 	}
 
@@ -562,12 +555,6 @@ section h3 {
 		font-size: 1.7rem;
 	}
 	
-	nav ul a:hover {
-		border-top: #d87227 6px solid;
-		background: #d87227;
-		color: white;
-	}
-		
 	.fixed-nav ul a {
 		border-top: white 6px solid;
 	}
@@ -578,21 +565,15 @@ section h3 {
 
 	nav ul li.icon {
 		display: block;	
-		height: 50px;
+
 		visibility: visible;
 		opacity: 1;
 	}
-	
-	nav ul li.icon:hover {
-		border-top: #d87227 6px solid;
-		background: #d87227;
-		color: white;
-	}
-	
+
 	nav ul.responsive li {
 		display: block;
 		float: none;
-		height: 50px;
+		height: 56px;
 		visibility: visible;
 		opacity: 1;
 		transition: all 0.2s;

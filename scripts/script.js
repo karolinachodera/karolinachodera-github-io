@@ -187,6 +187,7 @@ var lis = document.querySelectorAll("nav ul li");
 // 56 -> nav height
 
 for(var i = 0; i < as.length; i++) {
+
 	as[i].addEventListener("click", function (e) {
 		e.preventDefault();
 		ul.removeAttribute("class");
@@ -194,35 +195,60 @@ for(var i = 0; i < as.length; i++) {
 		var aPos = document.querySelector(a).offsetTop - 100;
 		var isFixed = nav.classList.contains("fixed-nav");
 		function scr() {
-			if(isFixed === true) {
-				if( window.scrollY  <=  aPos - 10 || document.documentElement.scrollTop <= aPos - 10) {
+			if(window.scrollY) {
+				if(isFixed === true) {
+				if( window.scrollY  <=  aPos - 10 ) {
 					window.scrollBy(0, 10);
 					setTimeout(scr, 3);
-				} else if ( window.scrollY >=  aPos + 10 || document.documentElement.scrollTop >= aPos + 10) {
+				} else if ( window.scrollY >=  aPos + 10 ) {
 					window.scrollBy(0, -10);
 					setTimeout(scr, 3);
-				} else if (window.scrollY){
+				} else {
 					window.scrollTo(window.scrollX, aPos);
 					clearInterval(scr);
+				} 
+			} else {
+				if( window.scrollY  <=  aPos - 56 - 10 ) {
+					window.scrollBy(0, 10);
+					setTimeout(scr, 3);
+				} else if ( window.scrollY >=  aPos - 56 + 10) {
+					window.scrollBy(0, -10);
+					setTimeout(scr, 3);
+				} else {
+					window.scrollTo(window.scrollX, aPos - 56);
+					clearInterval(scr);
+				} 
+			}
+						
+				
+			} else {
+				if(isFixed === true) {
+				if( document.documentElement.scrollTop  <=  aPos - 10 ) {
+					window.scrollBy(0, 10);
+					setTimeout(scr, 3);
+				} else if ( window.scrollY >=  aPos + 10 ) {
+					window.scrollBy(0, -10);
+					setTimeout(scr, 3);
 				} else {
 					window.scrollTo(document.documentElement.scrollLeft, aPos);
 					clearInterval(scr);
 				}
 			} else {
-				if( window.scrollY  <=  aPos - 56 - 10 || document.documentElement.scrollTop <= aPos - 56 - 10) {
+				if( document.documentElement.scrollTop  <=  aPos - 56 - 10 ) {
 					window.scrollBy(0, 10);
 					setTimeout(scr, 3);
-				} else if ( window.scrollY >=  aPos - 56 + 10 || document.documentElement.scrollTop <= aPos - 56 + 10) {
+				} else if (document.documentElement.scrollTop <= aPos - 56 + 10) {
 					window.scrollBy(0, -10);
 					setTimeout(scr, 3);
-				} else if (window.scrollY){
-					window.scrollTo(window.scrollX, aPos - 56);
-					clearInterval(scr);
 				} else {
 					window.scrollTo(document.documentElement.scrollLeft, aPos - 56);
 					clearInterval(scr);
 				}
 			}
+				
+			}
+			
+			
 		}
 		scr();
 	}, false);
