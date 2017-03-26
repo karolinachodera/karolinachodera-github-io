@@ -221,31 +221,32 @@ for(var i = 0; i < as.length; i++) {
 			}
 						
 				
-			} else {
-				if(isFixed === true) {
+			} else  {
+			if(isFixed === true) {
 				if( document.documentElement.scrollTop  <=  aPos - 10 ) {
-					window.scrollBy(0, 10);
-					setTimeout(scr, 3);
-				} else if ( window.scrollY >=  aPos + 10 ) {
-					window.scrollBy(0, -10);
-					setTimeout(scr, 3);
+					window.scrollBy(0, 20);
+					setTimeout(scr, 5);
+				} else if ( document.documentElement.scrollTop >=  aPos + 10 ) {
+					window.scrollBy(0, -20);
+					setTimeout(scr, 5);
 				} else {
-					window.scrollTo(document.documentElement.scrollLeft, aPos);
+					window.scrollTo(0, aPos);
 					clearInterval(scr);
 				}
-			} else {
-				if( document.documentElement.scrollTop  <=  aPos - 56 - 10 ) {
-					window.scrollBy(0, 10);
-					setTimeout(scr, 3);
-				} else if (document.documentElement.scrollTop <= aPos - 56 + 10) {
-					window.scrollBy(0, -10);
-					setTimeout(scr, 3);
-				} else {
-					window.scrollTo(document.documentElement.scrollLeft, aPos - 56);
-					clearInterval(scr);
-				}
+			
 			}
-				
+				else {
+				if( document.documentElement.scrollTop   <=  aPos - 56 - 10 ) {
+					window.scrollBy(0, 10);
+					setTimeout(scr, 5);
+				} else if ( document.documentElement.scrollTop  >=  aPos - 56 + 10) {
+					window.scrollBy(0, -10);
+					setTimeout(scr, 5);
+				} else {
+					window.scrollTo(0, aPos - 56);
+					clearInterval(scr);
+				} 
+			}
 			}
 			
 			
