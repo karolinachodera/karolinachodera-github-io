@@ -50,11 +50,11 @@ table {
 
 body {
 	width: 100%;
-	background: #00132c;
+	background: white;
 	margin: 0px auto;
 	font-size: 1em; /*14px*/
 	font-family: Lato, Arial, Helvetica, sans-serif;
-	color: #ffffff;
+	color: #404040;
 	padding: 0px;
 
 }
@@ -65,8 +65,8 @@ body, html {
 
 
 header {
-	background-image: url("../images/headerlogo.jpg");
-    height: 100%;
+	background-image: url("../images/header6.jpg");
+    min-height: 100%;
     width: 100%;
     background-attachment: fixed;
     background-position: center;
@@ -74,8 +74,44 @@ header {
     background-size: cover;
 	text-align: center;
 	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
+header div {
+	background: rgba(255,255,255,0.3);
+	box-sizing: border-box;
+	padding: 30px 75px;
+	position: relative;
+}
+
+header div form {
+	padding-bottom: 0px;
+}
+
+header div::before, header div::after {
+	content: "";
+	display: block;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+
+}
+
+header div::before {
+	border-top: 20px #fc5f45 solid;
+	border-left: 20px #fc5f45 solid;
+	top: -10px;
+	left: -10px;
+}
+
+header div::after {
+	border-bottom: 20px #fc5f45 solid;
+	border-right: 20px #fc5f45 solid;
+	bottom: -10px;
+	right: -10px;
+}
 
 #logo {
 	display: block;
@@ -87,6 +123,22 @@ header {
 	top: 50%;
 	transform: translate(-50%, -50%);
 }
+.row_carousel {
+	width: 75%;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+#carousel {
+	display: flex;
+}
+
+#carousel img {
+	box-sizing: border-box;
+	display: block;
+	padding: 0 80px;
+}
+
 
 
 section {
@@ -97,6 +149,68 @@ section p {
 	margin: 0 auto;
 	width: 75%;
 	line-height: 1.5rem;
+}
+
+.row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#description img {
+	margin: 0 75px;
+}
+
+#description ul li {
+
+	height: 95px;
+	line-height: 95px;
+}
+
+#left_ul {
+	text-align: right;
+}
+
+/* #left_ul li::after { */
+	/* display: inline-block; */
+	/* content:  url("../images/leaf.png"); */
+	/* width: 72px; */
+	/* height: 72px; */
+	/* vertical-align: middle; */
+	
+/* } */
+
+#left_ul li {
+	padding-right: 80px;
+}
+
+#left_ul li:nth-child(1) {
+	background: url("../images/flask.png") right center/72px no-repeat;
+}
+
+#left_ul li:nth-child(2) {
+	background: url("../images/note.png") right center/72px no-repeat;
+}
+
+#left_ul li:nth-child(3) {
+	background: url("../images/calendar.png") right center/72px no-repeat;
+}
+
+
+#right_ul li {
+	padding-left: 80px;	
+}
+
+#right_ul li:nth-child(1) {
+	background: url("../images/leaf.png") left center/72px no-repeat;
+}
+
+#right_ul li:nth-child(2) {
+	background: url("../images/chart.png") left center/72px no-repeat;
+}
+
+#right_ul li:nth-child(3) {
+	background: url("../images/time.png") left center/72px no-repeat;
 }
 
 form {
@@ -142,7 +256,7 @@ form button {
 }
 
 #second {
-	background-image: url("../images/header.jpg");
+	background-image: url("../images/header2.jpg");
     height: auto;
     width: 100%;
     background-attachment: fixed;
@@ -154,10 +268,25 @@ form button {
 
 h2 {
 	text-align: center;
-	font-size: 2em;
+	text-transform: uppercase;
+	font-size: 3rem;
 	font-weight: bold;
-	line-height: 2.75rem;
+	line-height: 4rem;
 	padding-bottom: 15px;
+
+}
+
+/* h2 span { */
+	/* padding-left: 15px; */
+	/* border-left: 10px solid black; */
+/* } */
+
+section h2::before {
+
+	content: "";
+	padding-left:15px;
+	border-left: 10px solid #fc5f45;
+
 }
 
 footer {
@@ -211,6 +340,31 @@ header a.hidden {
 
 	header a img {
 	width: 50px;
+}
+
+	header div {
+	padding: 30px 5px;
+	margin: 10px;
+}
+
+
+header div::before, header div::after {
+	width: 30px;
+	height: 30px;
+}
+
+header div::before {
+	border-top: 10px #fc5f45 solid;
+	border-left: 10px #fc5f45 solid;
+	top: -5px;
+	left: -5px;
+}
+
+header div::after {
+	border-bottom: 10px #fc5f45 solid;
+	border-right: 10px #fc5f45 solid;
+	bottom: -5px;
+	right: -5px;
 }
 	
 }
