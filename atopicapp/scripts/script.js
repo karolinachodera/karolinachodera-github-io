@@ -1,11 +1,10 @@
+
+
 //walidacja formularza
 
-var form = document.querySelector("#myForm");
-var fields = document.querySelectorAll("form [data-error]");
-
-var ul = document.querySelector("#errList");
-
-
+var form = document.querySelectorAll(".mc-embedded-subscribe-form");
+var fields;
+var actualForm;
 function isMail(field) {
 	return field.value.indexOf("@") !== -1;
 }
@@ -15,9 +14,10 @@ function isText(field) {
 }
 
 function tableErrors(table) {
+	var ul = actualForm.querySelector("#errList");
 	if(!ul) {
 		ul = document.createElement("ul");
-		form.insertBefore(ul, fields[0]);
+		actualForm.insertBefore(ul, fields[0]);
 		ul.setAttribute("id", "errList");
 	}
 	ul.innerHTML = "";
@@ -29,18 +29,19 @@ function tableErrors(table) {
 	
 }	
 
-
-
-form.addEventListener("submit", function(e) {
+for (i = 0; i < form.length; i++) {
+	form[i].addEventListener("submit", function(e) {
 	e.preventDefault();
+	actualForm = e.target;
+	fields = actualForm.querySelectorAll("[data-error]");
 	var table = [];
 	var isValid;
 	for(i = 0; i < fields.length; i++) {
 		var field = fields[i];
 		
-		if(field.name === "your-name") {
+		if(field.name === "FNAME") {
 			isValid = isText(field);
-		} else if(field.name ==="your-email") {
+		} else if(field.name ==="EMAIL") {
 			isValid = isMail(field);
 		}
 		if(isValid === false) {
@@ -50,9 +51,12 @@ form.addEventListener("submit", function(e) {
 	if(table.length !== 0) {
 		tableErrors(table);
 	} else {
-		form.removeChild(document.querySelector("#errList"));
+		actualForm.removeChild(document.querySelector("#errList"));
 	}
 }, false);
+}
+
+
 
 
 
