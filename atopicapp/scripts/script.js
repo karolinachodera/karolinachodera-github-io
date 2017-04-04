@@ -5,6 +5,7 @@
 var form = document.querySelectorAll(".mc-embedded-subscribe-form");
 var fields;
 var actualForm;
+var ul;
 function isMail(field) {
 	return field.value.indexOf("@") !== -1;
 }
@@ -14,11 +15,11 @@ function isText(field) {
 }
 
 function tableErrors(table) {
-	var ul = actualForm.querySelector("#errList");
+	ul = actualForm.querySelector(".errList");
 	if(!ul) {
 		ul = document.createElement("ul");
 		actualForm.insertBefore(ul, fields[0]);
-		ul.setAttribute("id", "errList");
+		ul.setAttribute("class", "errList");
 	}
 	ul.innerHTML = "";
 	table.forEach(function (error) {
@@ -50,8 +51,10 @@ for (i = 0; i < form.length; i++) {
 	}
 	if(table.length !== 0) {
 		tableErrors(table);
+	} else if(ul) {
+		actualForm.removeChild(document.querySelector(".errList"));
+		return true;
 	} else {
-		actualForm.removeChild(document.querySelector("#errList"));
 		return true;
 	}
 }, false);

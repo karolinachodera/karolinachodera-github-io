@@ -363,7 +363,7 @@ header a.hidden {
 	visibility: hidden;
 }
 
-#errList {
+.errList {
 	margin-bottom: 15px;
 	padding: 20px;
 	background: rgba(0,0,0,0.2);
@@ -372,11 +372,11 @@ header a.hidden {
 	text-align: center;
 }
 
-#errList li {
+.errList li {
 	padding: 5px 0;
 }
 
-#second #errList {
+#second .errList {
 	background: rgba(255,255,255,0.2);
 	color: #404040;
 }
