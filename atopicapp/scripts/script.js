@@ -53,9 +53,9 @@ for (i = 0; i < form.length; i++) {
 		tableErrors(table);
 	} else if(ul) {
 		actualForm.removeChild(document.querySelector(".errList"));
-		return true;
+		actualForm.submit();
 	} else {
-		return true;
+		actualForm.submit();
 	}
 }, false);
 }
