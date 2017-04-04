@@ -52,6 +52,7 @@ for (i = 0; i < form.length; i++) {
 		tableErrors(table);
 	} else {
 		actualForm.removeChild(document.querySelector("#errList"));
+		return true;
 	}
 }, false);
 }
