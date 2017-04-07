@@ -164,6 +164,7 @@ header p {
 
 section {
 	padding: 50px 0;
+	overflow-x: hidden;
 }
 
 section p {
@@ -392,6 +393,9 @@ header a.hidden {
 	height: 55px;
 }
 
+form button {
+	width: 100%;
+}
 	header a img {
 	width: 50px;
 }
@@ -420,5 +424,87 @@ header div::after {
 	bottom: -5px;
 	right: -5px;
 }
+	
+}
+
+
+@media screen and (max-width: 480px) {
+	.row {
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: center;
+}
+#left_ul li {
+	text-align:left;
+	padding-left: 80px;
+	padding-right: 0px;
+}
+
+#left_ul li:nth-child(1), #left_ul li:nth-child(2), #left_ul li:nth-child(3) {
+	background-position: left center;
+}
+	#description img {
+		width: 300px;
+	margin: 0px;
+	order: -1;
+}
+
+#description h3 {
+	font-size: 1.5rem;
+}
+
+
+
+#description ul li {
+	height: 95px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+#left_ul, #right_ul {
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+}
+
+.row_carousel {
+	width: 300px;
+	margin: 0 auto;
+	height: 570px;
+}
+
+#carousel {
+	display: flex;
+	position: absolute;
+	left: 0;
+	top: 0;
+	animation: slide 20s infinite;
+}
+
+#carousel img {
+	box-sizing: border-box;
+	display: block;
+	width: 300px;
+	height: 570px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+@keyframes slide {
+	0% { left: 0;}
+	9.1% {left: 0;}
+	18.2% {left: -300px;}
+	27.3% {left: -600px;}
+	36.4% {left: -900px;}
+	45.5% {left: -1200px;}
+	54.6% {left: -1500px;}
+	63.7% {left: -1800px;}
+	72.8% {left: -2100px;}
+	81.9% {left: -2400px;}
+	100% {left: 0;}
+}
+
 	
 }

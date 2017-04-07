@@ -285,19 +285,19 @@ section h2 span {
 }
 
 .chart#chart2::before {
-	width: 30%;
+	width: 25%;
 }
 
 .chart#chart3::before {
-	width: 80%;
+	width: 75%;
 }
 
 .chart#chart4::before {
-	width: 100%;
+	width: 85%;
 }
 
 .chart#chart5::before {
-	width: 100%;
+	width: 90%;
 }
 
 section h4 {
