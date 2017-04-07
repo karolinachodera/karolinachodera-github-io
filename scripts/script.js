@@ -14,10 +14,16 @@ function initMap() {
 //adding button to scroll to top  
 
 function animateScroll() {
-	
-	if(window.scrollY > 0 || document.documentElement.scrollTop > 0) {
+	if(window.innerWidth <=680) {
+		if(window.scrollY > 0 || document.documentElement.scrollTop > 0) {
+			window.scrollBy(0, -15);
+			setTimeout(animateScroll, 2);
+	}
+	} else {
+		if(window.scrollY > 0 || document.documentElement.scrollTop > 0) {
 		window.scrollBy(0, -10);
 		setTimeout(animateScroll, 5);
+	}
 	}
 }
 
@@ -26,6 +32,7 @@ var button = document.querySelector(".up");
 button.addEventListener("click", function(e) {
 	e.stopPropagation();
 	animateScroll();
+	ul.removeAttribute("class");
 	
 }, false)
 
