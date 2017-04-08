@@ -97,8 +97,10 @@ form.addEventListener("submit", function(e) {
 	}
 	if(errors.length > 0) {
 		createTable(errors);
-	} else {
+	} else if(document.querySelector("#table-errors")){
 		form.removeChild(document.querySelector("#table-errors"));
+		form.submit();
+	} else {
 		form.submit();
 	}
 
