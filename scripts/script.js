@@ -99,8 +99,9 @@ form.addEventListener("submit", function(e) {
 		createTable(errors);
 	} else {
 		fields[0].parentNode.removeChild(document.querySelector("#table-errors"));
+		form.submit();
 	}
-console.log(errors);
+
 	
 }, false);
 
