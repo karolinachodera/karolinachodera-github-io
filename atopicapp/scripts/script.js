@@ -93,15 +93,12 @@ if(window.innerWidth > 680) {
 }
 
 function hidden() {
-	
 	if(document.body.scrollTop > 100) {
 		button.classList.add("hidden");
 	} else if (window.innerWidth > 680) {
 		button.classList.remove("hidden");
 	}
 }
-
-
 
 var  last;
 
