@@ -88,18 +88,24 @@ function scroll(e) {
 	
 }
 
+if(window.innerWidth > 680) {
+	button.classList.remove("hidden");
+}
+
 function hidden() {
+	
 	if(document.body.scrollTop > 100) {
 		button.classList.add("hidden");
-	} else {
+	} else if (window.innerWidth > 680) {
 		button.classList.remove("hidden");
 	}
 }
 
+
+
 var  last;
 
 function bounce() {
-
 	var bottom = parseInt(document.querySelector("header a").style.bottom);
 	setTimeout(bounce, 500);
 	
@@ -136,7 +142,9 @@ function bounce() {
 		document.querySelector("header a").style.bottom = bottom;
 	}
 }
+if(window.innerWidth > 680) {
 bounce();
+}
 
 button.addEventListener("click", scroll, false);
 window.addEventListener("scroll", hidden, false);
