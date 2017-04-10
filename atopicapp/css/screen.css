@@ -128,12 +128,23 @@ header p {
 	/* max-width: 420px; */
 }
 .row_carousel {
-	width: 75%;
+	width: 930px;
 	height: 570px;
 	overflow: hidden;
 	margin: 0 auto;
 	position: relative;
 }
+
+
+
+	#carousel img {
+		box-sizing: border-box;
+		display: block;
+		width: 300px;
+		height: 570px;
+		margin: 0 5px;
+		padding: 0;
+	}
 
 #carousel {
 	display: flex;
@@ -143,11 +154,6 @@ header p {
 	animation: slide 20s infinite;
 }
 
-#carousel img {
-	box-sizing: border-box;
-	display: block;
-	padding: 0 80px;
-}
 
 @keyframes slide {
 	0% { left: 0;}
@@ -324,6 +330,7 @@ form button:hover {
 }
 
 
+
 h2 {
 	text-align: center;
 	text-transform: uppercase;
@@ -352,6 +359,7 @@ footer p {
 	text-transform: uppercase;
 	font-size: 2rem;
 	font-weight: bold;
+	line-height: 2.2rem;
 }
 
 footer a {
@@ -414,15 +422,19 @@ header a.hidden {
 	}
 	#left_ul {
 	order: 2;
-	width: 50%;
+	width: 49%;
 	}
 	
 	#description .img {
 		width: 100%;
 	}
 	#right_ul {
-		width: 50%;
+		width: 49%;
 	}
+	.row {
+	justify-content: space-between;
+}
+
 	
 	.row_carousel {
 		width: 620px;
@@ -505,11 +517,22 @@ header div::after {
 	bottom: -5px;
 	right: -5px;
 }
-#left_ul {
-	width: 480px;
+.row {
+	justify-content: center;
+}
+	#left_ul {
+	width: 470px;
 	}
 	#right_ul {
-	width: 480px;
+	width: 470px;
+	}
+	
+		#right_ul li {
+	text-align: right;
+	}
+	
+	#left_ul li {
+	text-align: left;
 	}
 	.row_carousel {
 		width: 300px;
@@ -553,8 +576,10 @@ header div::after {
 @media screen and (max-width: 480px) {
 	
 	#left_ul {
-	width: 100%;
+	width: 95%;
 	}
+	
+
 	
 	#description .img {
 		width: 300px;
@@ -566,7 +591,11 @@ header div::after {
 		width: 300px;
 	}
 	#right_ul {
-		width: 100%;
+		width: 95%;
+	}
+	#second h2 {
+		font-size: 2.5rem;
+		line-height: 2.8rem;
 	}
 
 	
