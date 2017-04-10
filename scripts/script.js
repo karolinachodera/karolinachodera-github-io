@@ -282,16 +282,9 @@ window.setTimeout(offsetAnchor, 1);
 //animated charts
 var chartSection = document.getElementById("charts");
 var charts = [].slice.call(document.querySelectorAll(".chart"));
-if(window.scrollY >= chartSection.offsetTop - 150) {
-	for(var i = 0; i < charts.length; i++) {
-		if( i === 0) {
-			charts[i].setAttribute("id", "chart1");
-		}
-	}
-}
 
 window.addEventListener("scroll", function() {
-	if(window.scrollY >= chartSection.offsetTop - 150 || document.documentElement.scrollTop >= chartSection.offsetTop - 150) {
+	if(window.scrollY >= chartSection.offsetTop - 250 || document.documentElement.scrollTop >= chartSection.offsetTop - 250) {
 		for(var i = 0; i < charts.length; i++) {
 			switch(i) {
 				case 0:
@@ -302,8 +295,6 @@ window.addEventListener("scroll", function() {
 					charts[2].setAttribute("id", "chart3");
 				case 3:
 					charts[3].setAttribute("id", "chart4");
-				case 4:
-					charts[4].setAttribute("id", "chart5");
 			}
 		}
 	}

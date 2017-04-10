@@ -116,8 +116,7 @@ nav ul {
 
 nav ul li {
 	float: left;
-	min-width: 16.66%;
-	max-width: calc(100% / 6);	
+	width: 20%;
 	text-align: center;
 	font: 1.7rem Lato;
 	line-height: 50px;
@@ -176,6 +175,42 @@ nav ul li:hover {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+}
+
+#skills ul {
+	text-transform: uppercase;
+	font-size: 1.5rem;
+	text-align: center;
+	letter-spacing: 2px;
+	min-width: 50%;
+	margin: 0 5px;
+	width: 600px;
+	display: flex;
+	justify-content:space-between;
+	
+}
+
+
+#skills #row_carousel {
+	width: 75%;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+	height: 100px;
+}
+
+#carousel {
+	display: flex;
+	position: absolute;
+	width: 1220px;
+	left: 0;
+	top: 0;
+	animation: skillsslide 5s infinite;
+}
+
+@keyframes skillsslide {
+	from {left: 0;}
+	to {left: -610px;}
 }
 
 .works, .project {
@@ -281,19 +316,19 @@ section h2 span {
 }
 
 .chart#chart1::before {
-	width: 75%;
+	width: 95%;
 }
 
 .chart#chart2::before {
-	width: 25%;
+	width: 100%;
 }
 
 .chart#chart3::before {
-	width: 75%;
+	width: 95%;
 }
 
 .chart#chart4::before {
-	width: 85%;
+	width: 100%;
 }
 
 .chart#chart5::before {
@@ -304,6 +339,10 @@ section h4 {
 	font: 2rem Lato;
 	text-align: center;
 	padding: 10px 0;
+}
+
+#charts {
+	clear: both;
 }
 
  
