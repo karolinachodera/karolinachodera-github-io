@@ -154,6 +154,49 @@ header p {
 	animation: slide 20s infinite;
 }
 
+#screens {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.switch {
+	margin: 20px auto;
+}
+
+.switch li{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: rgba(0,0,0,0.15);
+	float: left;
+	margin: 0 2px;
+}
+
+.switch li:first-child {
+	position: relative;
+}
+
+
+.switch div {
+	position: absolute;
+	top: 0;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	background: #38897c;
+	animation: switch 20s infinite;
+}
+
+.switch li:nth-child(3n+2) {
+	display: none;
+}
+
+.switch li:nth-child(3n+3) {
+	display: none;
+}
+
 
 @keyframes slide {
 	0% { left: 0;}
@@ -162,6 +205,16 @@ header p {
 	50% {left: -100%;}
 	66.66% {left: -200%;}
 	83.33% {left: -200%;}
+	100% {left: 0;}
+}
+
+@keyframes switch {
+	0% { left: 0;}
+	16.66% {left: 0;}
+	33.33% {left: 24px;}
+	50% {left: 24px;}
+	66.66% {left: 48px;}
+	83.33% {left: 48px;}
 	100% {left: 0;}
 }
 
@@ -214,6 +267,8 @@ section p {
   justify-content: center;
   flex-direction: column;
 }
+
+
 
 #left_ul, #right_ul {
 	box-sizing: border-box;
@@ -461,6 +516,22 @@ header a.hidden {
 	
 
 
+.switch li:nth-child(3n+2) {
+	display: block;
+}
+
+.switch li:nth-child(3n+3) {
+	display: block;
+}
+
+.switch li:nth-child(even) {
+	display: none;
+}
+
+
+
+
+
 
 	@keyframes slide {
 		0% { left: 0;}
@@ -472,6 +543,15 @@ header a.hidden {
 		100% {left: 0;}
 	}
 	
+		@keyframes switch {
+		0% { left: 0;}
+		9.1% {left: 0;}
+		27.3% {left: 24px;}
+		45.5% {left: 48px;}
+		63.7% {left: 72px;}
+		81.9% {left: 96px;}
+		100% {left: 0;}
+	}
 
 }
 
@@ -556,6 +636,18 @@ header div::after {
 		margin: 0 auto;
 		padding: 0;
 	}
+	
+	.switch li:nth-child(3n+2) {
+	display: block;
+}
+
+.switch li:nth-child(3n+3) {
+	display: block;
+}
+
+.switch li:nth-child(even) {
+	display: block;
+}
 
 	@keyframes slide {
 		0% { left: 0;}
@@ -568,6 +660,20 @@ header div::after {
 		63.7% {left: -1800px;}
 		72.8% {left: -2100px;}
 		81.9% {left: -2400px;}
+		100% {left: 0;}
+	}
+	
+	@keyframes switch {
+		0% { left: 0;}
+		9.1% {left: 0;}
+		18.2% {left: 24px;}
+		27.3% {left: 48px;}
+		36.4% {left: 72px;}
+		45.5% {left: 96px;}
+		54.6% {left: 120px;}
+		63.7% {left: 144px;}
+		72.8% {left: 168px;}
+		81.9% {left: 192px;}
 		100% {left: 0;}
 	}
 
