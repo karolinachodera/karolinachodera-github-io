@@ -182,35 +182,35 @@ nav ul li:hover {
 	font-size: 1.5rem;
 	text-align: center;
 	letter-spacing: 2px;
-	min-width: 50%;
-	margin: 0 5px;
-	width: 600px;
+	width: 50%;
+	float: left;
+}
+
+#skills ul li {
 	display: flex;
-	justify-content:space-between;
-	
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-
-#skills #row_carousel {
-	width: 75%;
-	margin: 0 auto;
-	overflow: hidden;
-	position: relative;
-	height: 100px;
+svg {
+	height: 20px;
+	width: 20px;
+	margin: 10px;
 }
 
-#carousel {
-	display: flex;
-	position: absolute;
-	width: 1220px;
-	left: 0;
-	top: 0;
-	animation: skillsslide 5s infinite;
+svg rect {
+	x: 0px;
+	y: 0px;
+	rx: 9px;
+	ry: 9px;
+	width: 20px;
+	height: 18px;
+	fill: #d87227;
 }
 
-@keyframes skillsslide {
-	from {left: 0;}
-	to {left: -610px;}
+#skills ul li:first-child svg {
+	display: none;
 }
 
 .works, .project {
@@ -647,6 +647,16 @@ section h3 {
 	#contact-form input[name='_replyto']  {
 		float: none;
 		width: 100%;
+	}
+	
+	#skills ul {
+	width: 100%;
+	float: none;
+	}
+
+
+	#skills ul li:first-child svg {
+		display: block;
 	}
 		
 	.works, .project {
