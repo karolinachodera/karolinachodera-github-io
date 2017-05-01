@@ -250,15 +250,18 @@ section {
 	margin: 0 auto;
 }
 
-.person {
+.column {
 	padding: 0 15px ;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
-.person h3 {
+.column h3 {
 	font-size: 1.5rem;
 }
 
-.person img {
+#team .column img {
 	width: 250px;
 	height: 250px;
 	
@@ -266,23 +269,32 @@ section {
 
 .relative {
 	position: relative;
-}
-
-.person .relative {
-	width: 250px;
-	height: 250px;
 	margin: 15px auto;
 }
 
-.mousedsc {
+#team .column .relative {
 	width: 250px;
 	height: 250px;
+}
+
+.mousedsc {
 	position: absolute;
 	top: 0;
-	line-height: 250px;
 	background: #2352b6;
 	opacity: 0;
 	transition: opacity 0.5s;
+}
+
+#team .mousedsc {
+	width: 250px;
+	height: 250px;
+	line-height: 250px;
+}
+
+#achieve .mousedsc {
+	width: 200px;
+	height: 200px;
+	line-height: 200px;
 }
 
 .visible {
