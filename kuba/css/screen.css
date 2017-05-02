@@ -131,23 +131,24 @@ nav {
 .mainNav , .socialList {
 	margin: auto 30px;
 	display: flex;
-	
+	height: 50px;
 }
 
 
 .mainNav li{
 	float: left;
-	margin: auto 15px;
+	padding: 0 15px;
 }
 
 .socialList  li {
 	float: left;
-	margin: auto 8px;
+	padding: 0 8px;
 }
 
 .mainNav li a, .socialList li a {
 	color: white;
 	text-decoration: none;
+	line-height: 50px;
 }
 
 .socialList img {
@@ -202,6 +203,7 @@ h2::after {
 }
 
 section {
+	clear: both;
 	width: 75%;
 	margin: 0 auto;
 	padding: 20px;
@@ -238,8 +240,13 @@ section {
 	background: #2352b6;
 	margin-right: 20px;
 }
+.position {
+	position: relative;
+	width: 50%;
+	margin: 0 15px;
+}
 
-#team {
+#team , #contact{
 	width: 100%;
 	background: rgba(0,0,0,0.8);
 	color: white;
@@ -252,10 +259,46 @@ section {
 }
 
 .column {
-	padding: 0 15px ;
+	width: 100%;
+	position: absolute;
+	top: 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+
+.left {
+	left: -500px;
+}
+
+.animationLeft {
+	animation: moveLeft 2s forwards;
+}
+
+.right {
+	right: -500px;
+}
+
+.animationRight {
+	animation: moveRight 2s forwards;
+}
+
+.column3 {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+
+@keyframes moveLeft {
+	0% { left: -500;}
+	100% {left: 0;}
+}
+
+@keyframes moveRight {
+	0% { right: -500;}
+	100% {right: 0;}
 }
 
 .column h3 {
@@ -307,6 +350,7 @@ section {
 }
 
 .up {
+	display: block;
 	width: 75px;
 	height: 75px;
 	border: none;
@@ -323,4 +367,8 @@ section {
 
 .visible {
 	opacity: 1;
+}
+
+.current {
+	background: black;
 }

@@ -165,38 +165,48 @@ function scrollSlow(e) {
 	button.addEventListener("click", scrollSlow, false);
 })();
 
-// function slowScroll(e) {
-	// e.preventDefault();
-	// var id = e.target.getAttribute("href")
-	// var position = document.querySelector(id).offsetTop - 100;
-	// console.log("first");
-	// function scroll() {
-		// if( window.scrollY  <=  position - 10 ) {
-					// window.scrollBy(0, 10);
-					// console.log("second")
-					// setTimeout(scroll, 3);
-				// } else if ( window.scrollY >=  position + 10 ) {
-					// window.scrollBy(0, -10);
-					// setTimeout(scroll, 3);
-				// } else {
-					// window.scrollTo(window.scrollX, position);
-					// clearInterval(scroll);
-				// } 
-	// })();
-	
-	// // if(window.scrollY > position) {
-		// // up(); 
-	// // }
-// }
-
 
 (function navScroll() {
 	var mainNavElems = [].slice.call(document.querySelectorAll(".mainNav li a"));
+
 	for(var i = 0; i < mainNavElems.length; i++) {
 		mainNavElems[i].addEventListener("click", scrollSlow, false);
 	}
 })();
 
 
+function highlightNav() {
+	var sections = document.querySelectorAll("section");
+	for (var i = 0; i < sections.length; i++) {
+		var id = "[href='#" + sections[i].getAttribute("id") + "']";
+		// if (window.scrollY === document.body.offsetHeight - window.innerHeight) {
+			// id = "[href='#" + sections[sections.length - 1].getAttribute("id") + "']";
 
-	
+			// document.querySelector(id).parentNode.classList.add("current");
+		// } 
+		
+	if(window.scrollY >= sections[i].offsetTop - 100 && window.scrollY < sections[i+1].offsetTop - 100) {
+		document.querySelector(id).parentNode.classList.add("current");
+		
+	} else {
+		document.querySelector(id).parentNode.classList.remove("current");
+	}
+	}
+};
+window.addEventListener("scroll", highlightNav, false);
+
+(function setHeight() {
+	var element = document.querySelectorAll("#team .column");
+	for (var i = 0; i < element.length; i++) {
+	element[i].parentNode.setAttribute("style", "height: " + element[i].offsetHeight + "px");
+	}
+})();
+
+function animationTeam() {
+	if(window.scrollY >= document.querySelector("#team").offsetTop - window.innerHeight) {
+		document.querySelector(".column.left").classList.add("animationLeft");
+		document.querySelector(".column.right").classList.add("animationRight");
+	}
+}
+
+window.addEventListener("scroll", animationTeam, false)
