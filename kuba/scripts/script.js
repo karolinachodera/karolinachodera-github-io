@@ -105,3 +105,98 @@ slider(document.querySelector("header img"), 2, document.querySelector("header .
 		descriptions[i].addEventListener("mouseleave", hidden, false);
 	}
 })();
+
+function scrollSlow(e) {
+	e.preventDefault();
+	var id = e.target.getAttribute("href");
+	var position = (document.querySelector(id).offsetTop - 100) > 0? (document.querySelector(id).offsetTop - 100) : (document.querySelector(id).offsetTop);
+	if (position > document.body.offsetHeight - window.innerHeight) {
+		position = document.body.offsetHeight - window.innerHeight;
+	}
+		function scroll() {
+			
+			if(window.scrollY) {
+
+				if( window.scrollY  <  (position - 20)) {
+					window.scrollBy(0, 15);
+					if(window.innerWidth <= 680) {
+						setTimeout(scroll, 1)
+					} else {
+						setTimeout(scroll, 3);
+					}
+				} else if ( window.scrollY >  (position + 20)) {
+					window.scrollBy(0, -15);
+					if(window.innerWidth <= 680) {
+						setTimeout(scroll, 1)
+					} else {
+						setTimeout(scroll, 3);
+					}
+				} else {
+					window.scrollTo(window.scrollX, position);
+					clearInterval(scroll);
+				} 
+			} else {
+				if( document.documentElement.scrollTop  <=  position - 20 ) {
+					window.scrollBy(0, 20);
+					setTimeout(scroll, 5);
+			} else if ( document.documentElement.scrollTop >=  position + 20 ) {
+					window.scrollBy(0, -20);
+					setTimeout(scroll, 5);
+			} else {
+					window.scrollTo(0, position);
+					clearInterval(scroll);
+			}
+			}
+		}
+		scroll();
+	
+}
+
+(function buttonVisible() {
+	var button = document.querySelector(".up");
+	function buttonVisible() {
+		if(window.scrollY >= 100 || document.documentElement.scrollTop >= 100) {
+			button.classList.add("visible");
+		} else {
+			button.classList.remove("visible");
+		}
+	}
+	window.addEventListener("scroll", buttonVisible, false);
+	button.addEventListener("click", scrollSlow, false);
+})();
+
+// function slowScroll(e) {
+	// e.preventDefault();
+	// var id = e.target.getAttribute("href")
+	// var position = document.querySelector(id).offsetTop - 100;
+	// console.log("first");
+	// function scroll() {
+		// if( window.scrollY  <=  position - 10 ) {
+					// window.scrollBy(0, 10);
+					// console.log("second")
+					// setTimeout(scroll, 3);
+				// } else if ( window.scrollY >=  position + 10 ) {
+					// window.scrollBy(0, -10);
+					// setTimeout(scroll, 3);
+				// } else {
+					// window.scrollTo(window.scrollX, position);
+					// clearInterval(scroll);
+				// } 
+	// })();
+	
+	// // if(window.scrollY > position) {
+		// // up(); 
+	// // }
+// }
+
+
+(function navScroll() {
+	var mainNavElems = [].slice.call(document.querySelectorAll(".mainNav li a"));
+	for(var i = 0; i < mainNavElems.length; i++) {
+		mainNavElems[i].addEventListener("click", scrollSlow, false);
+	}
+})();
+
+
+
+	

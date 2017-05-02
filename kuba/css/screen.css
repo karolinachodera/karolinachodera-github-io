@@ -125,6 +125,7 @@ nav {
 	align-items: center;
 	justify-content: space-between;
 	z-index: 10;
+	box-shadow: 0 2px 10px rgba(0,0,0, 0.5);
 }
 
 .mainNav , .socialList {
@@ -297,12 +298,29 @@ section {
 	line-height: 200px;
 }
 
-.visible {
-	opacity: 1;
-}
+
 
 #sponsor img {
 	height: 150px;
 	width: 200px;
 	margin: 0 25px;
+}
+
+.up {
+	width: 75px;
+	height: 75px;
+	border: none;
+	border-radius: 50%;
+	background: #2352b6 url('../images/up.png') no-repeat center;
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	outline: none;
+	box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.5);
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+
+.visible {
+	opacity: 1;
 }
