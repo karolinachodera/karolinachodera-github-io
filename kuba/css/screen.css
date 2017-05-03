@@ -140,6 +140,7 @@ nav {
 .mainNav li{
 	float: left;
 	padding: 0 15px;
+	background: #2352b6;
 }
 
 .socialList  li {
@@ -376,6 +377,7 @@ section {
 	background: black;
 }
 
+
 @media screen and (max-width: 480px) {
 	section {
 		width: 100%;
@@ -419,5 +421,38 @@ section {
 	.socialList, .mainNav {
 		width: 50%;
 		box-sizing: border-box;
+		margin: 0;
 	}
+	
+	.mainNav {
+		display: block;
+	}
+	
+	.mainNav li {
+		float: none;
+		text-align: right;
+	}
+	
+	.mainNav li {
+		display: none;
+	}
+	
+	.mainNav li:last-child {
+		display: block;
+		height: 50px;
+		line-height: 50px;
+	}
+	
+	.left {
+		left: 0px;
+	}
+
+	.right {
+		right: 0px;
+	}
+	
+	.mainNav li.display  {
+		display: block;
+	}
+
 }
