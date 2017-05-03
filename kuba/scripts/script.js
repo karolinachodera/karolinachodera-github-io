@@ -203,6 +203,7 @@ window.addEventListener("scroll", highlightNav, false);
 })();
 
 function animationTeam() {
+	
 	if(window.scrollY >= document.querySelector("#team").offsetTop - window.innerHeight) {
 		document.querySelector(".column.left").classList.add("animationLeft");
 		document.querySelector(".column.right").classList.add("animationRight");
