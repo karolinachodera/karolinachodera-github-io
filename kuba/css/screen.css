@@ -235,7 +235,8 @@ section {
 }
 
 #car ul li {
-	height: 40px;
+	line-height: 1.5rem;
+	margin: 10px 0;
 }
 
 #car ul li::before{
