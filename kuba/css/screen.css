@@ -112,6 +112,9 @@ header h1 {
 
 header div {
 	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 nav {
@@ -159,18 +162,14 @@ nav {
 	height: 30px;
 }
 
-
-
-header h1::before {
+header .squere {
 	display: inline-block;
-	content: "";
+
 	background: #2352b6;
 	width: 200px;
 	height: 200px;
 	transform: translateX(-50%) rotate(45deg);
 	position: absolute;
-	z-index: -1;
-	top: -150%;
 	left: 50%;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 	
@@ -377,8 +376,35 @@ section {
 	background: black;
 }
 
+@media screen and (max-width: 1080px) {
+	.socialList, .mainNav {
+		width: 50%;
+		box-sizing: border-box;
+		margin: 0;
+	}
+	
+	.mainNav {
+		display: block;
+	}
+	
+	.mainNav li {
+		float: none;
+		text-align: right;
+	}
+	
+	.mainNav li {
+		display: none;
+	}
+	
+	.mainNav li:last-child {
+		display: block;
+		height: 50px;
+		line-height: 50px;
+	}
+	
+}
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 680px) {
 	section {
 		width: 100%;
 		box-sizing: border-box;
@@ -400,11 +426,9 @@ section {
 	.position {
 		width: 100%;
 	}
-	header h1::before {
+	header .squere {
 		width: 150px;
 		height: 150px;
-		top: 0%;
-		left: 50%;
 	}
 	
 	#sponsor img:nth-child(2) {
