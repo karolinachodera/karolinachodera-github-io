@@ -146,6 +146,10 @@ nav {
 	background: #2352b6;
 }
 
+.mainNav li:last-child {
+		display: none;
+}
+
 .socialList  li {
 	float: left;
 	padding: 0 8px;
