@@ -3,16 +3,48 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Todo List</title>
+		<link rel="stylesheet" type="text/css" href="css/screen.css">
 		<script src="lib/angular.min.js"></script>
 		<script src="lib/angular-route.min.js"></script>
 		<script src="js/app.js"></script>
-		<script src="js/controllers/listCtrl.js"></script>
+		<script src="js/controllers/startListCtrl.js"></script>
 	</head>
-	<body ng-controller="ListCtrl">
-	<h1>{{listObject.title}}</h1>
-	<p>Number: {{listObject.exampleNumber}}</p>
-	<div>Subtitile: {{2 + 2 + listObject.exampleNumber}}</div>
-	<div ng-view>
-	</div>
+	<body ng-controller="startList">
+		<header>
+			<h1>TODO List</h1>
+			<h2>{{"Hello " + list.name + "!"}}</h2>
+		</header>
+		<section>
+			<h3>Make list</h3>
+			<input ng-model="list.name" placeholder="Your name">
+			<input ng-model="list.title" placeholder="List title">
+			<button>Create!</button>
+		</section>
+		<section>
+			<h2>{{list.title}}</h2>
+			<h3>Add first item</h3>
+			<input>
+			<button>Save</button>
+			<button>Cancel</button>
+		</section>
+		<section>
+			<button>Add item</button>
+			<input>
+			<h3>Your list</h3>
+			<ul>
+				<li>
+					<input type="checkbox">
+					<span>Item</span>
+					<button></button>
+				</li>
+				<li>
+					<input type="checkbox">
+					<span>Item</span>
+					<button></button>
+				</li>
+			</ul>
+		</section>
+		
+		
 	</body>
 </html>

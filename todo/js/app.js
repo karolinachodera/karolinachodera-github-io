@@ -1,4 +1,4 @@
-var app = angular.module("TODO_list", ["listCtrlModule", "ngRoute"]);
+var app = angular.module("TODO_list", ["startListCtrl", "ngRoute"]);
 
 app.config(function($routeProvider) {
 	$routeProvider 
