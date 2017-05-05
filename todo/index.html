@@ -8,12 +8,12 @@
 		<script src="lib/angular-route.min.js"></script>
 		<script src="js/app.js"></script>
 	</head>
-	<body ng-controller="startList">
+	<body>
 		<header>
 			<h1>TODO List</h1>
 			<h2>{{"Hello " + list.name + "!"}}</h2>
 		</header>
-		<section ng-view>
+		<section ng-view  ng-controller="startList">
 			<h3>Make list</h3>
 			<input ng-model="list.name" placeholder="Your name">
 			<input ng-model="list.title" placeholder="List title">
