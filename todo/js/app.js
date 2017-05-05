@@ -8,7 +8,7 @@ app.config(function($routeProvider) {
 			controller: "startList"
 		})
 		
-		.when("/#list", {
+		.when("/!/#list", {
 			templateUrl: "list.html",
 			controller: "todo_items"
 		})
