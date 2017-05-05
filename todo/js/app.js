@@ -19,7 +19,7 @@ app.config(function($routeProvider) {
 		})	
 		
 		.otherwise({
-			rtemplateUrl: "error.html",
+			templateUrl: "error.html"
 		})
 		
 });
