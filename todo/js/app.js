@@ -8,9 +8,9 @@ app.config(function($routeProvider) {
 			controller: "startList"
 		})
 		
-		.when("/startList", {
-			templateUrl: "views/startList.html",
-			controller: "startList"
+		.when("/list", {
+			templateUrl: "views/list.html",
+			controller: ["startList", "todo_items"]
 		})
 });
 
