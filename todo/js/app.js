@@ -9,12 +9,12 @@ app.config(function($routeProvider) {
 		})
 		
 		.when("/list", {
-			templateUrl: "views/addItem.html",
+			templateUrl: "list.html",
 			controller: "startList"
 		})
 		
 		.when("/addItem", {
-			templateUrl: "views/addItem.html",
+			templateUrl: "addItem.html",
 			controller: ["startList", "todo_items"]
 		})	
 		
