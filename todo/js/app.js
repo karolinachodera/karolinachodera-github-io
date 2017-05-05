@@ -4,7 +4,7 @@ app.config(function($routeProvider) {
 	$routeProvider
 
 		.when("/", {
-			templateUrl: "addItem.html",
+			templateUrl: "list.html",
 			controller: "startList"
 		})
 		
