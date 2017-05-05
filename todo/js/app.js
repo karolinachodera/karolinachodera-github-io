@@ -10,13 +10,17 @@ app.config(function($routeProvider) {
 		
 		.when("/list", {
 			templateUrl: "views/list.html",
-			controller: ["startList", "todo_items"]
+			controller: "startList"
 		})
 		
 		.when("/addItem", {
 			templateUrl: "views/addItem.html",
 			controller: ["startList", "todo_items"]
 		})	
+		
+		.otherwise({
+			redirectTo: "/"
+		})
 		
 });
 
