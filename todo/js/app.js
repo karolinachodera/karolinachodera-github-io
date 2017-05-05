@@ -8,8 +8,8 @@ app.config(function($routeProvider) {
 			controller: "startList"
 		})
 		
-		.when("/#%2Flist", {
-			templateUrl: "views/list.html",
+		.when("/list", {
+			templateUrl: "views/addItem.html",
 			controller: "startList"
 		})
 		
