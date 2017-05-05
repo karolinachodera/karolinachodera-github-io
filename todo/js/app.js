@@ -7,6 +7,11 @@ app.config(function($routeProvider) {
 			templateUrl: "views/startList.html",
 			controller: "startList"
 		})
+		
+		.when("/startList", {
+			templateUrl: "views/startList.html",
+			controller: "startList"
+		})
 });
 
 app.controller("startList", function($scope) {
