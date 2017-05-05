@@ -10,7 +10,7 @@ app.config(function($routeProvider) {
 			templateUrl: "views/addItem.html",
 			controller: "startList"
 		})
-};
+});
 
 app.controller("startList", function($scope) {
 	$scope.list = {};
