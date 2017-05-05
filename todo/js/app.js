@@ -1,13 +1,27 @@
-var app = angular.module("TODO_list", ["startListCtrl", "ngRoute"]);
+var app = angular.module("TODO_list", ["ngRoute"]);
 
 app.config(function($routeProvider) {
-	$routeProvider 
+	$routeProvider
 		.when("/", {
-			templateUrl: "views/secondPage.html",
-			controller: "listCtrl"
+			templateUrl: "views/startList.html",
+			controller: "startList"
 		})
-		.when("/nextPage", {
-			templateUrl: "view/nextPage.html",
-			controller: "listCtrl"
+		.when("/addItem", {
+			templateUrl: "views/addItem.html",
+			controller: "startList"
 		})
+}
+
+app.controller("startList", function($scope) {
+	$scope.list = {};
+	$scope.list.name = "";
+	$scope.list.title = "";
+});
+
+app.controller("todo_items", function($scope) {
+	$scope.listItems = [
+		{complated: true, name: "Shopping", date: "2017-05-05"},
+		{complated: true, name: "Programming", date: "2017-05-03"},
+		{complated: true, name: "Eating", date: "2017-05-04"}
+	]
 });

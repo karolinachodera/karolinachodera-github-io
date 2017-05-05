@@ -7,44 +7,18 @@
 		<script src="lib/angular.min.js"></script>
 		<script src="lib/angular-route.min.js"></script>
 		<script src="js/app.js"></script>
-		<script src="js/controllers/startListCtrl.js"></script>
 	</head>
 	<body ng-controller="startList">
 		<header>
 			<h1>TODO List</h1>
 			<h2>{{"Hello " + list.name + "!"}}</h2>
 		</header>
-		<section>
+		<section ng-view>
 			<h3>Make list</h3>
 			<input ng-model="list.name" placeholder="Your name">
 			<input ng-model="list.title" placeholder="List title">
-			<button>Create!</button>
+			<button><a href="views/startList.html">Create!</a></button>
 		</section>
-		<section>
-			<h2>{{list.title}}</h2>
-			<h3>Add first item</h3>
-			<input>
-			<button>Save</button>
-			<button>Cancel</button>
-		</section>
-		<section>
-			<button>Add item</button>
-			<input>
-			<h3>Your list</h3>
-			<ul>
-				<li>
-					<input type="checkbox">
-					<span>Item</span>
-					<button></button>
-				</li>
-				<li>
-					<input type="checkbox">
-					<span>Item</span>
-					<button></button>
-				</li>
-			</ul>
-		</section>
-		
-		
+
 	</body>
 </html>
