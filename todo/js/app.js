@@ -7,12 +7,12 @@ app.config(function($routeProvider) {
 			controller: "startList"
 		})
 		
-		.when("/#%2Flist", {
+		.when("/list", {
 			templateUrl: "list.html",
 			controller: "todo_items"
 		})
 		
-		.when("addItem", {
+		.when("/addItem", {
 			templateUrl: "addItem.html",
 			controller: "startList"
 		})	
