@@ -2,12 +2,9 @@ var app = angular.module("TODO_list", ["ngRoute"]);
 
 app.config(function($routeProvider) {
 	$routeProvider
+
 		.when("/", {
 			templateUrl: "views/startList.html",
-			controller: "startList"
-		})
-		.when("/addItem", {
-			templateUrl: "views/addItem.html",
 			controller: "startList"
 		})
 });
