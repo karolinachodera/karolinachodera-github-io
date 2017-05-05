@@ -5,7 +5,7 @@ app.config(function($routeProvider) {
 
 		.when("/", {
 			templateUrl: "list.html",
-			controller: "startList"
+			controller: "todo_items"
 		})
 		
 		.when("/list", {
@@ -13,7 +13,7 @@ app.config(function($routeProvider) {
 			controller: "startList"
 		})
 		
-		.when("/addItem", {
+		.when("/#addItem", {
 			templateUrl: "addItem.html",
 			controller: ["startList", "todo_items"]
 		})	
