@@ -12,6 +12,12 @@ app.config(function($routeProvider) {
 			templateUrl: "views/list.html",
 			controller: ["startList", "todo_items"]
 		})
+		
+		.when("/addItem", {
+			templateUrl: "views/addItem.html",
+			controller: ["startList", "todo_items"]
+		})	
+		
 });
 
 app.controller("startList", function($scope) {
