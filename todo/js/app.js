@@ -4,13 +4,13 @@ app.config(function($routeProvider) {
 	$routeProvider
 
 		.when("/", {
-			templateUrl: "list.html",
-			controller: "todo_items"
+			templateUrl: "startList.html",
+			controller: "startList"
 		})
 		
-		.when("/list", {
+		.when("/#list", {
 			templateUrl: "list.html",
-			controller: "startList"
+			controller: "todo_items"
 		})
 		
 		.when("/#addItem", {
