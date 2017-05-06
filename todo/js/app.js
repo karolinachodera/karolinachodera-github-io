@@ -41,6 +41,6 @@ app.controller("startList", function($scope) {
 	$scope.list.title = "";
 });
 
-app.controller("todoItemsCtrl", function($scope, "todo_list") {
+app.controller("todoItemsCtrl", function($scope, todo_list) {
 	$scope.listItems = todo_list.items;
 });
