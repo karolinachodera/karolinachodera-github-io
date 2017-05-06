@@ -32,6 +32,10 @@ app.service("todo_list", function() {
 		{id: 3,complated: true, name: "Eating", date: "2017-05-04"}
 	]
 	
+	todoList.save = function(newItem) {
+		todoList.items.ush(entry);
+	};
+	
 	return todoList;
 })
 
@@ -44,4 +48,8 @@ app.controller("startList", function($scope) {
 app.controller("todoItemsCtrl", function($scope, todo_list, $location) {
 	$scope.listItems = todo_list.items;
 	$scope.listItem = {id: 4, completed: true, name: "zadanie", date: new Date()}
+	$scope.save = function() {
+		todo_list.save($scope.listItem);
+		$location.path("/list");
+	}
 });
