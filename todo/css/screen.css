@@ -95,6 +95,12 @@ input, button {
 	height: 50px;
 	border: 1px solid gray;
 	border-radius: 5px;
+	padding: 5px;
+	font-size: 1.5rem;
+}
+
+button {
+	background: green;
 }
 
 ul {
@@ -104,6 +110,7 @@ ul {
 }
 
 ul li {
+	box-sizing: border-box;
 	width: 100%;
 	min-height: 50px;
 	padding: 5px;
@@ -133,4 +140,7 @@ a {
 	line-height: 50px;
 	background: gray;
 	color: white;
+	text-decoration: none;
+	border: 1px solid black;
+	font-size: 1.5rem;
 }
