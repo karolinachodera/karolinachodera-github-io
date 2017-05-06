@@ -28,6 +28,7 @@ app.service("todo_list", function() {
 	todoList.items = [
 	]
 	
+	
 	todoList.save = function(newItem) {
 		todoList.items.push(newItem);
 	};
@@ -43,7 +44,7 @@ app.controller("startList", function($scope) {
 
 app.controller("todoItemsCtrl", function($scope, todo_list, $location) {
 	$scope.listItems = todo_list.items;
-	$scope.listItem = {id: 1, completed: true, name: "zadanie", date: new Date()}
+	$scope.listItem = {completed: true, name: "", date: new Date()}
 	$scope.save = function() {
 		todo_list.save($scope.listItem);
 		$location.path("/list");
