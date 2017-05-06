@@ -9,7 +9,7 @@ app.config(function($routeProvider) {
 		
 		.when("/list", {
 			templateUrl: "list.html",
-			controller: "todo_items"
+			controller: "todoItemsCtrl"
 		})
 		
 		.when("/addItem", {
@@ -23,16 +23,24 @@ app.config(function($routeProvider) {
 		
 });
 
+app.service("todo_list", function() {
+	var todoList = {};
+	
+	todoList.items = [
+		{complated: true, name: "Shopping", date: "2017-05-05"},
+		{complated: true, name: "Programming", date: "2017-05-03"},
+		{complated: true, name: "Eating", date: "2017-05-04"}
+	]
+	
+	return todoList;
+})
+
 app.controller("startList", function($scope) {
 	$scope.list = {};
 	$scope.list.name = "";
 	$scope.list.title = "";
 });
 
-app.controller("todo_items", function($scope) {
-	$scope.listItems = [
-		{complated: true, name: "Shopping", date: "2017-05-05"},
-		{complated: true, name: "Programming", date: "2017-05-03"},
-		{complated: true, name: "Eating", date: "2017-05-04"}
-	]
+app.controller("todoItemsCtrl", function($scope, "todo_list") {
+	$scope.listItems = todo_list.items;
 });
