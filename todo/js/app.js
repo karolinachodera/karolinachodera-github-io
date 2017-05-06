@@ -14,7 +14,7 @@ app.config(function($routeProvider) {
 		
 		.when("/addItem", {
 			templateUrl: "addItem.html",
-			controller: "startList"
+			controller: "todoItemsCtrl"
 		})	
 		
 		.otherwise({
