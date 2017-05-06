@@ -33,7 +33,7 @@ app.service("todo_list", function() {
 	]
 	
 	todoList.save = function(newItem) {
-		todoList.items.ush(entry);
+		todoList.items.push(newItem);
 	};
 	
 	return todoList;
