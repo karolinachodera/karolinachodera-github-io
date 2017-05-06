@@ -128,8 +128,14 @@ ul li {
 	align-items: center;
 }
 
-li button {
+li a {
 	width: 25px;
+	height: 25px;
+	background: white;
+	cursor: pointer;
+	text-decoration: none;
+	border: 1px solid gray;
+	border-radius: 5px;
 }
 
 li input {

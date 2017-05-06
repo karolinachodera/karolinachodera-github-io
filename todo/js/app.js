@@ -3,7 +3,7 @@ var app = angular.module("TODO_list", ["ngRoute"]);
 app.config(function($routeProvider) {
 	$routeProvider
 		.when("/", {
-			templateUrl: "startList.html",
+			templateUrl: "startList.html"
 		})
 		
 		.when("/list", {
@@ -15,6 +15,10 @@ app.config(function($routeProvider) {
 			templateUrl: "addItem.html",
 			controller: "todoItemsCtrl"
 		})	
+		
+		.when("/addItem/edit", {
+			templateUrl: "edit.html"
+		})
 		
 		.otherwise({
 			templateUrl: "error.html"
