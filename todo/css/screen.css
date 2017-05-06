@@ -106,6 +106,10 @@ button {
 	color: white;
 }
 
+button .cancel {
+	background: rgba(0,0,0,0.2);
+}
+
 ul {
 	width: 100%;
 	border: 1px solid gray;
