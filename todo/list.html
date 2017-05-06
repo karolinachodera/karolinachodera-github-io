@@ -1,6 +1,6 @@
 <h2>{{list.title}}</h2>
 <a href="https://karolinachodera.github.io/todo/#!/addItem">Add item</a>
-	<li ng-repeat="item in todoList | orderBy: '-date'">
+	<li ng-repeat="item in listItems | orderBy: '-date'">
 		<input type="checkbox">
 		<span>{{item.name | uppercase}}</span>
 		<button></button>
