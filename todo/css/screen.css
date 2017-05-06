@@ -101,7 +101,7 @@ input, button {
 }
 
 button {
-	background: green;
+	background: #accbe8;
 }
 
 ul {
@@ -142,7 +142,7 @@ a {
 	height: 50px;
 	cursor: pointer;
 	line-height: 50px;
-	background: gray;
+	background: #accbe8;
 	color: white;
 	text-decoration: none;
 	border: 1px solid black;
