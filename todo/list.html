@@ -4,6 +4,6 @@
 	<li ng-repeat="item in listItems | orderBy: '-date'">
 		<input type="checkbox">
 		<span>{{item.name | uppercase}}</span>
-		<a href="https://karolinachodera.github.io/todo/#!/addItem/edit"></a>
+		<a href="https://karolinachodera.github.io/todo/#!/addItem/edit/{{item.date}}"></a>
 	</li>
 </ul>
