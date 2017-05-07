@@ -43,6 +43,7 @@ app.service("todo_list", function() {
 			var  index = todoList.items.indexOf(entry);
 			todoList.items.push(todoList.items[index]);
 			todoList.items.splice(index, 1);
+			return todoList;
 		}
 	};
 	
