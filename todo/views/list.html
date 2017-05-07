@@ -4,6 +4,6 @@
 	<li ng-repeat="item in listItems | orderBy: '-date'">
 		<input type="checkbox">
 		<span>{{item.name | uppercase}}</span>
-		<button class="remove"></button>
+		<button class="remove" ng-click="remove(item)"></button>
 	</li>
 </ul>
