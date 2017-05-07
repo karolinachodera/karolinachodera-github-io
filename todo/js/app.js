@@ -39,6 +39,10 @@ app.service("todo_list", function() {
 	
 	todoList.complete = function(entry) {
 		entry.completed = !entry.completed;
+		if(entry.completed) {
+			var  index = todoList.items.indexOf(entry);
+			todoList.items.push(todoList.items.splice(index, 1));
+		}
 	};
 	
 	return todoList;
