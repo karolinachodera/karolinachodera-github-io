@@ -129,7 +129,7 @@ li button {
 	height: 30px;
 	cursor: pointer;
 	text-decoration: none;
-	border: 1px solid gray;
+	border: none;
 	border-radius: 5px;
 }
 
@@ -167,11 +167,11 @@ a {
 }
 
 .unchecked {
-	background: rgba(100,255,100,0.5) url("../images/unchecked.png") no-repeat center;
+	background: rgba(126,200,77,0.8) url("../images/unchecked.png") no-repeat center;
 }
 
 .checked {
-	background: rgba(100,255,100,0.5) url("../images/checked.png") no-repeat center;
+	background: rgba(126,200,77,0.8) url("../images/checked.png") no-repeat center;
 }
 
 .strike {
