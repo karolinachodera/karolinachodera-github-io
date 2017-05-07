@@ -16,7 +16,7 @@ app.config(function($routeProvider) {
 			controller: "todoItemsCtrl"
 		})	
 		
-		.when("/addItem/edit", {
+		.when("/addItem/edit:date", {
 			templateUrl: "edit.html"
 		})
 		
