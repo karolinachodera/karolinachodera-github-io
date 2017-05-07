@@ -3,25 +3,21 @@ var app = angular.module("TODO_list", ["ngRoute"]);
 app.config(function($routeProvider) {
 	$routeProvider
 		.when("/", {
-			templateUrl: "startList.html"
+			templateUrl: "views/startList.html"
 		})
 		
 		.when("/list", {
-			templateUrl: "list.html",
+			templateUrl: "views/list.html",
 			controller: "todoItemsCtrl"
 		})
 		
 		.when("/addItem", {
-			templateUrl: "addItem.html",
+			templateUrl: "views/addItem.html",
 			controller: "todoItemsCtrl"
 		})	
-		
-		.when("/addItem/edit:date/", {
-			templateUrl: "edit.html"
-		})
-		
+				
 		.otherwise({
-			templateUrl: "error.html"
+			templateUrl: "/"
 		})
 		
 });
@@ -31,7 +27,6 @@ app.service("todo_list", function() {
 	
 	todoList.items = [
 	]
-	
 	
 	todoList.save = function(newItem) {
 		todoList.items.push(newItem);
