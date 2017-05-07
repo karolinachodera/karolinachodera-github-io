@@ -37,6 +37,10 @@ app.service("todo_list", function() {
 		todoList.items.splice(index, 1);
 	};
 	
+	todoList.complete = function(entry) {
+		entry.completed = !entry.completed;
+	};
+	
 	return todoList;
 })
 
@@ -49,7 +53,7 @@ app.controller("startList", function($scope) {
 app.controller("todoItemsCtrl", function($scope, todo_list, $location) {
 	$scope.listItems = todo_list.items;
 	
-	$scope.listItem = {completed: true, name: "", date: new Date()};
+	$scope.listItem = {completed: false, name: "", date: new Date()};
 	
 	$scope.save = function() {
 		todo_list.save($scope.listItem);
@@ -58,6 +62,10 @@ app.controller("todoItemsCtrl", function($scope, todo_list, $location) {
 	
 	$scope.remove = function(entry) {
 		todo_list.remove(entry);
+	};
+	
+	$scope.complete = function(entry) {
+		todo_list.complete(entry);
 	};
 	
 });
