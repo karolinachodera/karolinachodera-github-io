@@ -32,8 +32,8 @@ app.service("todo_list", function() {
 		todoList.items.push(newItem);
 	};
 	
-	todoList.remove = function(item) {
-		var  index = todoList.item.indexOf(item);
+	todoList.remove = function(entry) {
+		var  index = todoList.item.indexOf(entry);
 		todoList.item.splice(index, 1);
 	};
 	
@@ -56,9 +56,8 @@ app.controller("todoItemsCtrl", function($scope, todo_list, $location) {
 		$location.path("/list");
 	};
 	
-	$scope.remove = function(item) {
-		todo_list.remove($scope.listItem);
-		
+	$scope.remove = function(entry) {
+		todo_list.remove(entry);
 	}
 	
 });
