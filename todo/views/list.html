@@ -2,7 +2,7 @@
 <a href="https://karolinachodera.github.io/todo/#!/addItem">+ Add task</a>
 <ul>	
 	<li ng-repeat="item in listItems | orderBy: '-date'">
-		<button ng-class="item.completed ? checked : unchecked"></button>
+		<button ng-class="item.completed ? 'checked' : 'unchecked'" ng-click="complete(item)"></button>
 		<span ng-class="{strike:item.completed}">{{item.name | uppercase}}</span>
 		<button class="remove" ng-click="remove(item)"></button>
 	</li>
