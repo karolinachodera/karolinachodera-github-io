@@ -127,7 +127,6 @@ ul li {
 li button {
 	width: 25px;
 	height: 25px;
-	background: rgba(255,0,0,0.8);
 	cursor: pointer;
 	text-decoration: none;
 	border: 1px solid gray;
@@ -164,5 +163,5 @@ a {
 }
 
 .remove {
-	background: url("../images/trash.png") no-repeat center;
+	background: rgba(255,0,0,0.5) url("../images/trash_white.png") no-repeat center;
 }
