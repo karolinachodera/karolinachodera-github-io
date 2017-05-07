@@ -41,7 +41,8 @@ app.service("todo_list", function() {
 		entry.completed = !entry.completed;
 		if(entry.completed) {
 			var  index = todoList.items.indexOf(entry);
-			todoList.items.push(todoList.items.splice(index, 1));
+			todoList.items.push(todoList.items[index]);
+			todoList.items.splice(index, 1);
 		}
 	};
 	
