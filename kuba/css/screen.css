@@ -485,3 +485,22 @@ section {
 	}
 
 }
+
+@media screen and (max-width: 480px) {
+	h2 {
+	font-size: 1.7rem;
+	}
+
+	h2::before {
+		width: 20px;
+		height: 20px;
+		margin-right: 5px;
+	}
+
+	h2::after {
+		width: 20px;
+		height: 20px;
+		margin-left: 5px;
+	}
+	
+}
