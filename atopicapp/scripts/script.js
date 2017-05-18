@@ -27,7 +27,6 @@ function tableErrors(table) {
 		li.textContent = error;
 		ul.appendChild(li);
 	});
-	
 }	
 
 for (i = 0; i < form.length; i++) {
@@ -74,9 +73,7 @@ function scroll(e) {
 	var y = end.offsetTop;
 	
 	function down () {
-
 		if(document.body.scrollTop < end.offsetTop) {
-	
 			window.scrollBy(0, 10)
 			setTimeout(down, 5)
 		} else {
@@ -84,8 +81,6 @@ function scroll(e) {
 		}
 	}
 	down();
-	
-	
 }
 
 if(window.innerWidth > 680) {

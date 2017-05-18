@@ -57,10 +57,7 @@ body {
 	font-family: Lato, Arial, Helvetica, sans-serif;
 	color: #404040;
 	padding: 0px;
-
 }
-
-
 
 header {
 	background: #38897c;
@@ -96,7 +93,6 @@ header div::before, header div::after {
 	width: 50px;
 	height: 50px;
 	position: absolute;
-
 }
 
 header div::before {
@@ -125,8 +121,6 @@ header p {
 	display: block;
 	width: 120px;
 	margin: 0 auto;
-	/* min-width: 250px; */
-	/* max-width: 420px; */
 }
 .row_carousel {
 	width: 930px;
@@ -136,16 +130,14 @@ header p {
 	position: relative;
 }
 
-
-
-	#carousel img {
-		box-sizing: border-box;
-		display: block;
-		width: 300px;
-		height: 570px;
-		margin: 0 5px;
-		padding: 0;
-	}
+#carousel img {
+	box-sizing: border-box;
+	display: block;
+	width: 300px;
+	height: 570px;
+	margin: 0 5px;
+	padding: 0;
+}
 
 #carousel {
 	display: flex;
@@ -179,7 +171,6 @@ header p {
 	position: relative;
 }
 
-
 .switch div {
 	position: absolute;
 	top: 0;
@@ -197,7 +188,6 @@ header p {
 .switch li:nth-child(3n+3) {
 	display: none;
 }
-
 
 @keyframes slide {
 	0% { left: 0;}
@@ -218,8 +208,6 @@ header p {
 	83.33% {left: 48px;}
 	100% {left: 0;}
 }
-
-
 
 section {
 	padding: 50px 0;
@@ -245,7 +233,6 @@ section p {
 	padding: 0 25px;
 	min-width: 340px;
 	order: 1;
-
 }
 
 #description img {
@@ -260,16 +247,12 @@ section p {
 	font-size: 1.5rem;
 }
 
-
-
 #description ul li {
 	height: 95px;
 	display: flex;
   justify-content: center;
   flex-direction: column;
 }
-
-
 
 #left_ul, #right_ul {
 	box-sizing: border-box;
@@ -386,8 +369,6 @@ form button:hover {
     background-size: cover;
 }
 
-
-
 h2 {
 	text-align: center;
 	text-transform: uppercase;
@@ -395,7 +376,6 @@ h2 {
 	font-weight: bold;
 	line-height: 4rem;
 	padding-bottom: 15px;
-
 }
 
 section h2::before {
@@ -409,7 +389,6 @@ footer {
 	background: rgba(255,255,255,0.2);
 	padding: 50px 0;
 	text-align: center;
-	
 }
 
 footer p {
@@ -468,8 +447,6 @@ header a.hidden {
 	color: #404040;
 }
 
-
-
 @media screen and (max-width: 1024px) {
 	header div form {
 		width: 90%;
@@ -490,9 +467,7 @@ header a.hidden {
 	}
 	.row {
 	justify-content: space-between;
-}
-
-	
+	}
 	.row_carousel {
 		width: 620px;
 		margin: 0 auto;
@@ -506,7 +481,6 @@ header a.hidden {
 		top: 0;
 		animation: slide 20s infinite;
 	}
-
 	#carousel img {
 		box-sizing: border-box;
 		display: block;
@@ -515,26 +489,18 @@ header a.hidden {
 		margin: 0 5px;
 		padding: 0;
 	}
+	.switch li:nth-child(3n+2) {
+		display: block;
+	}
+
+	.switch li:nth-child(3n+3) {
+		display: block;
+	}
+
+	.switch li:nth-child(even) {
+		display: none;
+	}
 	
-
-
-.switch li:nth-child(3n+2) {
-	display: block;
-}
-
-.switch li:nth-child(3n+3) {
-	display: block;
-}
-
-.switch li:nth-child(even) {
-	display: none;
-}
-
-
-
-
-
-
 	@keyframes slide {
 		0% { left: 0;}
 		9.1% {left: 0;}
@@ -559,62 +525,60 @@ header a.hidden {
 
 @media screen and (max-width: 680px) {
 	input {
-	float: left;
-	box-sizing: border-box;
-	width: 100%;
-	border: 2px gray solid;
-	border-radius: 5px;
-	padding: 10px;
-	height: 55px;
-}
+		float: left;
+		box-sizing: border-box;
+		width: 100%;
+		border: 2px gray solid;
+		border-radius: 5px;
+		padding: 10px;
+		height: 55px;
+	}
 
-form button {
-	width: 100%;
-}
-	header a img {
-	width: 50px;
-}
+	form button {
+		width: 100%;
+	}
+		header a img {
+		width: 50px;
+	}
 
-	header div {
-	padding: 30px 5px;
-	margin: 10px;
-}
+		header div {
+		padding: 30px 5px;
+		margin: 10px;
+	}
+	header div::before, header div::after {
+		width: 30px;
+		height: 30px;
+	}
 
+	header div::before {
+		border-top: 10px #fc5f45 solid;
+		border-left: 10px #fc5f45 solid;
+		top: -5px;
+		left: -5px;
+	}
 
-header div::before, header div::after {
-	width: 30px;
-	height: 30px;
-}
-
-header div::before {
-	border-top: 10px #fc5f45 solid;
-	border-left: 10px #fc5f45 solid;
-	top: -5px;
-	left: -5px;
-}
-
-header div::after {
-	border-bottom: 10px #fc5f45 solid;
-	border-right: 10px #fc5f45 solid;
-	bottom: -5px;
-	right: -5px;
-}
-.row {
-	justify-content: center;
-}
+	header div::after {
+		border-bottom: 10px #fc5f45 solid;
+		border-right: 10px #fc5f45 solid;
+		bottom: -5px;
+		right: -5px;
+	}
+	.row {
+		justify-content: center;
+	}
 	#left_ul {
-	width: 470px;
+		width: 470px;
 	}
 	#right_ul {
-	width: 470px;
+		width: 470px;
 	}
 	
-		#right_ul li {
-	text-align: right;
+	#right_ul li {
+		text-align: right;
 	}
 	
 	#left_ul li {
-	text-align: left;
+		text-align: left;
 	}
 	.row_carousel {
 		width: 300px;
@@ -640,16 +604,16 @@ header div::after {
 	}
 	
 	.switch li:nth-child(3n+2) {
-	display: block;
-}
+		display: block;
+	}
 
-.switch li:nth-child(3n+3) {
-	display: block;
-}
+	.switch li:nth-child(3n+3) {
+		display: block;
+	}
 
-.switch li:nth-child(even) {
-	display: block;
-}
+	.switch li:nth-child(even) {
+		display: block;
+	}
 
 	@keyframes slide {
 		0% { left: 0;}
@@ -686,9 +650,7 @@ header div::after {
 	#left_ul {
 	width: 95%;
 	}
-	
-
-	
+		
 	#description .img {
 		width: 300px;
 		max-width: 300px;
@@ -705,8 +667,6 @@ header div::after {
 		font-size: 2.5rem;
 		line-height: 2.8rem;
 	}
-
-	
 }
 
 

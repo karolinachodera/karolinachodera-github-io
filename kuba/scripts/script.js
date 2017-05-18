@@ -16,7 +16,6 @@ function slider(image, num, list) {
 	var counter = 1;
 	var op = 50;
 	var lis;
-	
 		function opacity() {
 			if(op <= 95) {
 				image.setAttribute("style", ("opacity: " + Number("0." + op)));
@@ -26,7 +25,7 @@ function slider(image, num, list) {
 				image.setAttribute("style", ("opacity: 1" ));
 				op = 50;
 			}
-		}
+		};
 		
 		(function initIndicator() {
 			for (var i = 1; i <= num; i++) {
@@ -47,7 +46,7 @@ function slider(image, num, list) {
 					lis[i - 1].classList.remove("current");
 				}
 			}
-		}
+		};
 		
 		function changeNumber() {
 			if(counter < num) {
@@ -63,9 +62,8 @@ function slider(image, num, list) {
 				indicatorSwitch();
 				opacity();
 			}
-		}
+		};
 		var interval = setInterval(changeNumber, 5000);
-		
 		function imageLink(e) {
 			var index;
 			var children = [].slice.call(e.target.parentNode.children);
@@ -78,11 +76,11 @@ function slider(image, num, list) {
 			clearInterval(interval);
 			changeNumber();
 			interval = setInterval(changeNumber, 5000);
-		}
+		};
 		
 		for(var i = 0; i < num; i++) {
 			lis[i].addEventListener("click", imageLink, false);
-		}
+		};
 }
 
 
@@ -91,15 +89,12 @@ slider(document.querySelector("header img"), 2, document.querySelector("header .
 function scrollSlow(e) {
 	e.preventDefault();
 	var id = e.target.getAttribute("href");
-
 	var position = (document.querySelector(id).offsetTop - 100) > 0? (document.querySelector(id).offsetTop - 100) : (document.querySelector(id).offsetTop);
 	if (position > document.body.offsetHeight - window.innerHeight) {
 		position = document.body.offsetHeight - window.innerHeight;
 	}
 		function scroll() {
-			
 			if(window.scrollY) {
-
 				if( window.scrollY  <  (position - 20)) {
 					window.scrollBy(0, 15);
 					if(window.innerWidth <= 680) {
@@ -122,10 +117,10 @@ function scrollSlow(e) {
 				if( document.documentElement.scrollTop  <=  position - 20 ) {
 					window.scrollBy(0, 20);
 					setTimeout(scroll, 5);
-			} else if ( document.documentElement.scrollTop >=  position + 20 ) {
+				} else if ( document.documentElement.scrollTop >=  position + 20 ) {
 					window.scrollBy(0, -20);
 					setTimeout(scroll, 5);
-			} else {
+				} else {
 					window.scrollTo(0, position);
 					clearInterval(scroll);
 			}
@@ -152,70 +147,58 @@ function scrollSlow(e) {
 	for(var i = 0; i < mainNavElems.length; i++) {
 		mainNavElems[i].addEventListener("click", scrollSlow, false);
 		mainNavElems[i].addEventListener("click", responsiveNav, false);
-	}
+	};
 })();
-
-
 
 (function descriptionVisible() {
 	var descriptions = [].slice.call(document.querySelectorAll(".relative .mousedsc"));
-	
 	function visible(e) {
 			e.target.classList.add("visible");
-	}
-	
+	};
 	function hidden(e) {
 			e.target.classList.remove("visible");
-	}
-	
+	};
 	for (var i = 0; i < descriptions.length; i++) {
 		descriptions[i].addEventListener("mouseenter", visible, false);
 		descriptions[i].addEventListener("mouseleave", hidden, false);
-	}
+	};
 })();
 
 function highlightNav() {
 	var sections = document.querySelectorAll("section");
 	for (var i = 0; i < sections.length; i++) {
 		var id = "[href='#" + sections[i].getAttribute("id") + "']";
-		// if (window.scrollY === document.body.offsetHeight - window.innerHeight) {
-			// id = "[href='#" + sections[sections.length - 1].getAttribute("id") + "']";
-
-			// document.querySelector(id).parentNode.classList.add("current");
-		// } 
-		
-	if(window.scrollY >= sections[i].offsetTop - 100 && window.scrollY < sections[i+1].offsetTop - 100) {
-		document.querySelector(id).parentNode.classList.add("current");
-		
-	} else {
-		document.querySelector(id).parentNode.classList.remove("current");
-	}
-	}
+		if(window.scrollY >= sections[i].offsetTop - 100 && window.scrollY < sections[i+1].offsetTop - 100) {
+			document.querySelector(id).parentNode.classList.add("current");
+		} else {
+			document.querySelector(id).parentNode.classList.remove("current");
+		}
+	};
 };
 window.addEventListener("scroll", highlightNav, false);
 
 (function setHeight() {
 	var element = document.querySelectorAll("#team .column");
 	for (var i = 0; i < element.length; i++) {
-	element[i].parentNode.setAttribute("style", "height: " + element[i].offsetHeight + "px");
+		element[i].parentNode.setAttribute("style", "height: " + element[i].offsetHeight + "px");
 	}
 })();
 
 function animationTeam() {
 	if(window.innerWidth >= 1080) {
-	if(window.scrollY >= document.querySelector("#team").offsetTop - window.innerHeight) {
-		document.querySelector(".column.left").classList.add("animationLeft");
-		document.querySelector(".column.right").classList.add("animationRight");
-	}
-	}
-}
+		if(window.scrollY >= document.querySelector("#team").offsetTop - window.innerHeight) {
+			document.querySelector(".column.left").classList.add("animationLeft");
+			document.querySelector(".column.right").classList.add("animationRight");
+		};
+	};
+};
 
-window.addEventListener("scroll", animationTeam, false)
+window.addEventListener("scroll", animationTeam, false);
 
 function responsiveNav() {
 	var mainNavLi = [].slice.call(document.querySelectorAll(".mainNav li:not(:last-child)"));
 	for (var i = 0; i < mainNavLi.length; i++) {
 		mainNavLi[i].classList.toggle("display");
-	}
-}
+	};
+};
 document.querySelector(".mainNav li:last-child").addEventListener("click", responsiveNav, false);
