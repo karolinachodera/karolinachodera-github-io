@@ -115,7 +115,7 @@ mailTo.addEventListener("mousedown", function () {
 var navBar = document.querySelector("nav");
 function scrollNav() {
 	var headerHeight = document.querySelector("header").offsetHeight;
-	if(window.scrollY) {
+	if(window.scrollY >= 0) {
 		if(window.scrollY >= headerHeight) {
 			navBar.setAttribute("class", "fixed-nav");
 		} else {
@@ -151,7 +151,7 @@ var sectionStart = 100;
 var scrollPosition = navHeight + sectionStart;
 
 function sectionTopBorder(header) {
-	if (window.scrollY) {
+	if (window.scrollY >= 0) {
 		if(window.scrollY >= header.offsetTop - scrollPosition) {
 			return true;
 		} else {
@@ -167,7 +167,7 @@ function sectionTopBorder(header) {
 }
 
 function sectionBottomBorder(nextHeader) {
-	if (window.scrollY) {
+	if (window.scrollY >= 0) {
 		if(window.scrollY < nextHeader.offsetTop - scrollPosition) {
 			return true;
 		} else {
@@ -216,7 +216,7 @@ window.addEventListener("scroll", highlightingNav, false);
 var navLinks = [].slice.call(document.querySelectorAll("nav ul li a"));
 
 function headerPositionTop(position) {
-	if(window.scrollY) {
+	if(window.scrollY >= 0) {
 		if(window.scrollY  <=  position - 10) {
 			return true;
 		}
@@ -234,7 +234,7 @@ function headerPositionTop(position) {
 }
 
 function headerPositionBottom(position) {
-	if(window.scrollY) {
+	if(window.scrollY >= 0) {
 		if(window.scrollY >=  position + 10) {
 			return true;
 		}
@@ -280,8 +280,8 @@ for(var i = 0; i < navLinks.length; i++) {
 //start website with #url 100px higher
 function offsetAnchor() {
     if(location.hash.length !== 0) {
-		if (window.scrollY) {
-        window.scrollTo(window.scrollX, window.scrollY - sectionStart);
+		if (window.scrollY >= 0) {
+        window.scrollTo(window.scrollX, document.documentElement.scrollTop - sectionStart);
 		} else {
 			window.scrollTo(document.documentElement.scrollLeft, window.scrollY - sectionStart);
 		}
