@@ -168,7 +168,11 @@ function highlightNav() {
 	var sections = document.querySelectorAll("section");
 	for (var i = 0; i < sections.length; i++) {
 		var id = "[href='#" + sections[i].getAttribute("id") + "']";
-		if(window.scrollY >= sections[i].offsetTop - 100 && window.scrollY < sections[i+1].offsetTop - 100) {
+		if(window.scrollY >= sections[i].offsetTop - 100 && window.scrollY < sections[i+1].offsetTop - 100 && window.scrollY !== document.body.scrollHeight - window.innerHeight) {
+			document.querySelector(id).parentNode.classList.add("current");
+		} else if (window.scrollY === document.body.scrollHeight - window.innerHeight) {
+			document.querySelector(id).parentNode.classList.remove("current");
+			id = "[href='#" + sections[sections.length - 1].getAttribute("id") + "']";
 			document.querySelector(id).parentNode.classList.add("current");
 		} else {
 			document.querySelector(id).parentNode.classList.remove("current");

@@ -145,6 +145,10 @@ nav {
 	background: #2352b6;
 }
 
+.mainNav li.current {
+	background: black;
+}
+
 .mainNav li:last-child {
 		display: none;
 }
@@ -371,9 +375,6 @@ section {
 	opacity: 1;
 }
 
-.current {
-	background: black;
-}
 
 @media screen and (max-width: 1080px) {
 	.socialList, .mainNav {
