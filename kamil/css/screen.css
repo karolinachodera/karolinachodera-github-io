@@ -82,7 +82,7 @@ header {
 	max-height: 100vh;
 	overflow: hidden;
 	background-color: #3a5468;
-	background-image: url("../images/header2.jpg");
+	background-image: url("../images/header.jpg");
 	background-position: center;
 	position: relative;
 	display: flex;
@@ -322,4 +322,10 @@ input:-webkit-autofill {
 
 #social #linkedin::before {
 	content: url("../images/linkedin.png");
+}
+
+#map {
+	width: 100%;
+	height: 300px;
+	filter: grayscale(90%);
 }
