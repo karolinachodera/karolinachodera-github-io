@@ -31,7 +31,7 @@ html {
 
 body {
 	line-height: 1;
-	text-align: center;
+	text-align: left;
 	font-family: 'Montserrat', sans-serif;
 	font-family: 'Open Sans', sans-serif;
 }
@@ -133,6 +133,7 @@ h2 {
 h3 {
 	font-size: 1.3rem;
 	letter-spacing: 2px;
+	line-height: 1.5rem;
 }
 
 .skills h3::before {
@@ -195,13 +196,15 @@ p {
 }
 
 #contact .flex-row {
-	justify-content: center;
+	justify-content: space-around;
+	flex-wrap: nowrap;
 }
 
 #contact .contact-form {
 	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: 15px 0 50px 25px;
 	width: 50%;
-	margin: 15px 50px 50px;
 }
 
 
@@ -264,7 +267,7 @@ input:-webkit-autofill {
 }
 
 #social {
-	margin: 0 50px;
+	max-width: 450px;
 }
 
 #social li {
@@ -272,6 +275,8 @@ input:-webkit-autofill {
 	padding: 10px 0;
 	font-size: 1.5rem;
 	line-height: 1.5rem;
+	margin-left: 65px;
+	text-indent: -65px;
 }
 
 #social li::before {
@@ -295,6 +300,7 @@ input:-webkit-autofill {
 
 #social #linkedin::before {
 	content: url("../images/linkedin.png");
+	vertical-align: -25%;
 }
 
 #address span {
@@ -312,4 +318,77 @@ footer {
 	background: #3a5468;
 	color: white;
 	padding: 50px 15%;
+}
+
+footer a {
+	color: white;
+}
+
+@media screen and (max-width: 1200px) {
+	.contact-form input[name='name'], .contact-form input[name='_replyto'] {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	#contact .flex-row {
+		flex-wrap: wrap;
+	}
+	
+	#contact .contact-form {
+		width: 100%;
+		margin: 15px 0 50px;
+	}
+	
+	.works {
+		width: 50%;
+	}
+	
+	.skills {
+		justify-content: center;
+	}
+	
+	.skills h3 {
+		width: 50%;
+		margin: 25px 0;
+	}
+}
+
+
+@media screen and (max-width:680px) {
+	section {
+		width: 98%;
+		padding: 0 20px;
+		box-sizing: border-box;
+	}
+	.works {
+		width: 100%;
+	}
+	
+	
+	.skills h3 {
+		width: 100%;
+	}
+
+}
+
+@media screen and (max-width:480px) {
+	h1 {
+		font-size: 2.5rem;
+		line-height: 3.5rem;
+		letter-spacing: 2px;
+	}
+	
+	h1::before {
+		height: 55px;
+	}
+	
+	p {
+		font-size: 1.1rem;
+		line-height: 2rem;
+	}
+	
+	.contact-form input[name='name'], .contact-form input[name='_replyto'] {
+		width: 100%;
+	}
 }
