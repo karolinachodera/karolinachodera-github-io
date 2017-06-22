@@ -318,6 +318,13 @@ footer {
 	background: #3a5468;
 	color: white;
 	padding: 50px 15%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+footer p, footer h3 {
+	font-size: 1rem;
 }
 
 footer a {
