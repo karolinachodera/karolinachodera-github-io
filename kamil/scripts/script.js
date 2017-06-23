@@ -47,3 +47,34 @@ function initMap() {
 })();
 
 
+(function navRwd() {
+	var navUl = document.querySelector("nav ul");
+	
+	function navSwitch() {
+		navUl.classList.toggle("responsive");
+	}
+	
+	var navHamburger = document.querySelector(".icon");
+	
+	navHamburger.addEventListener("click", navSwitch, false);
+})();
+
+
+(function navigationLinks() {
+	var navLinks = [].slice.call(document.querySelectorAll("nav ul li a"));
+	var navUl = document.querySelector("nav ul");
+	function navLink(e) {
+		e.preventDefault();
+		var id = e.target.hash;
+		var sectionHeaderPosition = document.querySelector(id).offsetTop - 100;
+		window.scrollTo(0, sectionHeaderPosition);
+		console.log("elo");
+		navUl.classList.remove("responsive");
+	}
+
+	for(var i = 0; i < navLinks.length; i++) {
+		navLinks[i].addEventListener("click", navLink, false);
+	}
+	
+})();
+
