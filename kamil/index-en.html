@@ -15,16 +15,19 @@
 			<h1>Kamil Kukowski <br>Konstrukcje</h1>
 			
 		</header>
+		
 		<nav>
 			<h3>Kamil Kukowski</h3>
 			<ul>
-				<li><a href="#about">O mnie</a></li>
-				<li><a href="#offer">Oferta</a></li>
-				<li><a href="#projects">Projekty</a></li>
-				<li><a href="#contact">Kontakt</a></li>
-				<li><a href="index.html">pl</a>|<a href="index-en.html">en</a></li>
+				<li><a href="#about">About me</a></li>
+				<li><a href="#offer">Offer</a></li>
+				<li><a href="#projects">Projects</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li class="language"><a href="index.html">pl</a>|<a href="index-en.html">en</a></li>
+				<li class="icon"><img src="images/nav.png"></li>
 			</ul>
 		</nav>
+		
 		<section id="about">
 			<h2>About me</h2>
 			<p> I am a Civil Engineer with expertise in structural engineering. My interest in civil engineering began from my early ages, further developed during my studies. 
@@ -32,65 +35,63 @@
 			receiving a final grade of 5,5 (in a scale of 5,5) on my diploma. I graduated from the top 5% of University graduates in 2015. I have dealt with both work in supervision on construction sites 
 			and in structural engineering. In my professional work I show reliability, attention to details and responsibility. 
 			</p>
-			<!-- <div class="charts"> -->
-				<!-- <h3>Analiza statyczno-wytrzymałościowa</h3> -->
-				<!-- <div class="chart"></div> -->
-				<!-- <h3>Rysunki techniczne CAD</h3> -->
-				<!-- <div class="chart"></div> -->
-				<!-- <h3>Modelowanie MES</h3> -->
-				<!-- <div class="chart"></div> -->
-			<!-- </div> -->
-			
-
 		</section>
-					<div class="flex-row skills">
-				<h3>Static structural <br>analysis and design</h3>
+		
+			<div class="flex-row skills">
+				<h3>Static structural<br>analysis and design</h3>
 				<h3>CAD technical drawings</h3>
 				<h3>FEM modeling</h3>
 			</div>
+			
 		<section id="offer">
 			<h2>My offer</h2>
 			<p>My company assist structural design offices looking for aid in their projects. I offer cooperation as a freelancer, in form of a remote work. I provide services in the field of technical 
-			documentation including technical drawings, static analysis and design, FEM modelling. I offer preparation of technical documentation both in English or Polish. The process of structural design 
-			in carried out on my own equipment and licensed software. Technical drawings are made in CAD.
+			documentation including technical drawings, static analysis and design, FEM modelling. I offer preparation of technical documentation both in English or Polish. The process of structural design in 
+			carried out on my own equipment and licensed software. Technical drawings are made in CAD. 
 			</p>
 		</section>
+		
 		<section id="projects">
-			<h2>Projekty</h2>
+			<h2>Projects</h2>
 				<div class="flex-row">
-					<img class="works" src="http://placehold.it/450x300" alt="">
-					<img class="works" src="http://placehold.it/450x300" alt="">
-					<img class="works" src="http://placehold.it/450x300" alt="">
-					<img class="works" src="http://placehold.it/450x300" alt="">
+					<img class="works" src="images/project1.jpg" alt="">
+					<img class="works" src="images/project2.jpg" alt="">
+					<img class="works" src="images/project3.jpg" alt="">
+					<img class="works" src="images/project4.jpg" alt="">
 					<img class="works" src="http://placehold.it/450x300" alt="">
 					<img class="works" src="http://placehold.it/450x300" alt="">
 				</div>
 		</section>
+		
 		<section id="contact">
-			<h2>Kontakt</h2>
+			<h2>Contact</h2>
 			<div class="flex-row">
 			<ul id="social">
 				<li id="name">Kamil Kukowski Konstrukcje</li>
-				<li id="address">ul. Filomatów Pomorskich 4A/16<br>87-100 Toruń</li>
+				<li id="address">ul. Filomatów Pomorskich 4A/16, 87&#8209;100 Toruń, Poland</li>
 				<li id="mail"><a href="mailto:">kamil@kukowski-konstrukcje.pl</a></li>
 				<li id="linkedin"><a href="https://www.linkedin.com/in/kamil-kukowski-22b34686/?locale=en_US" target="_blank">LinkedIn</a></li>
 			</ul>
-			<div class="contact-form">
-				<h3>Skontaktuj się ze mną</h3>
-			<form action="" method="POST" class="flex-row">
+			<form action="" method="POST" class="contact-form flex-row">
 				
-				<input type="text" name="name" placeholder="Imię i nazwisko" data-error="Podaj imię i nazwisko">
-				<input type="email" name="_replyto" placeholder="Twój email" data-error="Podaj email">
-				<textarea name="message" placeholder="Wiadomość" data-error="Wpisz wiadomość"></textarea>
-				<button type="submit" id="button-form">Wyślij</button>
+				<input type="text" name="name" placeholder="Your name" data-error="Please enter your name">
+				<input type="email" name="_replyto" placeholder="Your email" data-error="Please enter your email">
+				<textarea name="message" placeholder="Message" data-error="Please enter your message"></textarea>
+				<button type="submit" id="button-form">Send</button>
 			</form>
-			</div>
+
 			</div>
 			<div id="map"></div>
 		</section>
+		
+		<footer>
+			<h3>Kamil Kukowski Konstrukcje</h3>
+			<p>Developed by <a href="">Green Robots</a>. All Rights Reserved.</p>
+		</footer>
+		
+		<button class="hidden up"></button>
+		
 		<script src="scripts/script.js"></script>
-		 <script async defer
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfhIFCMVj1eACj1z5fy1BvlRAccExAzso&callback=initMap">
-		</script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfhIFCMVj1eACj1z5fy1BvlRAccExAzso&callback=initMap"></script>
 	</body>
 </html>
