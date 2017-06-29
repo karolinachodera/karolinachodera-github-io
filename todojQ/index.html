@@ -13,25 +13,28 @@
 			<h2></h2>
 		</header>
 		<section>
-			<h2></h2>
-			<a href="https://karolinachodera.github.io/todo/#!/addItem">+ Add task</a>
-			<ul>	
-				<li>
-					<button class="unchecked"></button>
-					<span></span>
-					<button class="remove"></button>
-				</li>
-			</ul>
+		
 			
-			<h3>Make list</h3>
-			<input placeholder="Your name">
-			<input placeholder="List title">
-			<a href="https://karolinachodera.github.io/todo/#!/list">Create!</a>
+			<section class="start-list">
+				<h3>Make list</h3>
+				<input name="your-name" placeholder="Your name">
+				<input name="list-title" placeholder="List title">
+				<button class="create">Create!</button>
+			</section>
 
-			<input placeholder="Task">
-			<button>Save</button>
-			<a href="https://karolinachodera.github.io/todo/#!/list" class="cancel">Cancel</a>
+			<section class="list">
+				<h3></h3>
+				<button  class="add">+ Add task</button>
+				<ul class="task-list">	
+				</ul>
+			</section>
+			
+			<section class="add-item">
+				<input name="task" placeholder="Task">
+				<button class="save">Save</button>
+				<button class="cancel">Cancel</button>
+			</section>
 		</section>
-
+	<script src="scripts/script.js"></script>
 	</body>
 </html>
