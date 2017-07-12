@@ -84,6 +84,7 @@ header {
 	background-color: #3a5468;
 	background-image: url("../images/header.jpg");
 	background-position: center;
+	background-size: cover;
 	position: relative;
 	display: flex;
 	flex-direction: column;
