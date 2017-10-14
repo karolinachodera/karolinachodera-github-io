@@ -73,12 +73,12 @@ function scroll(e) {
 	var y = end.offsetTop;
 	
 	function down () {
-		if(document.body.scrollTop < end.offsetTop) {
-			window.scrollBy(0, 10)
-			setTimeout(down, 5)
+		if(window.scrollY < y || document.documentElement.scrollTop < y) {
+			window.scrollBy(0, 50)
+			setTimeout(down, 1)
 		} else {
 			clearInterval(down);
-		}
+		} 
 	}
 	down();
 }
