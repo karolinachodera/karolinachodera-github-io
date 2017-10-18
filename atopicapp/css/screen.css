@@ -73,6 +73,7 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-bottom: 50px;
 }
 
 header div {
@@ -212,12 +213,14 @@ header p {
 section {
 	padding: 50px 0;
 	overflow-x: hidden;
+	text-align: center;
 }
 
 section p {
 	margin: 0 auto;
 	width: 75%;
-	line-height: 1.5rem;
+	line-height: 1.8rem;
+    font-size: 1.2rem;
 }
 
 .row {
@@ -225,6 +228,7 @@ section p {
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
+	padding: 0 30px;
 }
 
 #description .img {
@@ -248,10 +252,11 @@ section p {
 }
 
 #description ul li {
-	height: 95px;
 	display: flex;
-  justify-content: center;
-  flex-direction: column;
+	justify-content: center;
+	flex-direction: column;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 #left_ul, #right_ul {
@@ -375,7 +380,7 @@ h2 {
 	font-size: 3rem;
 	font-weight: bold;
 	line-height: 4rem;
-	padding-bottom: 15px;
+	padding-bottom: 40px;
 }
 
 section h2::before {
