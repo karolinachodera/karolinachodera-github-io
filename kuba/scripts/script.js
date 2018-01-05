@@ -1,13 +1,3 @@
-/* slider wersja 1 - na stronie jest jeden obrazek <img>, któremu zmieniana jest ścieżka src
-linkowanie do kolejnych obrazków nie może być ustawione za pomocą a href i dodaniem id do obrazków, ponieważ w danym momencie na stronie jest tylko jeden obrazek w sliderze.
-Linkowanie jest rozwiązane dodanym eventListenerem - onclick zmieniana jest ścieżka src istniejącego <img>
-
-Możliwa wersja 2 - na stronie są wstawione wszystkie, które chcemy <img>, w tej samej pozycji, jeden nad drugim (przysłaniają się). Zmieniany jest index obrazków.
-
-Wersja 3 - <img> są wstawione w długim divie, jeden obok drugiego - float: left. Wtedy wczytanie kolejnego obrazka odbywa się przez zmianę pozycji diva.
-*/
-
-
 function slider(image, num, list) {
 	var actualSrc = image.getAttribute("src");
 	var index = actualSrc.indexOf(1);
@@ -84,7 +74,7 @@ function slider(image, num, list) {
 }
 
 
-slider(document.querySelector("header img"), 2, document.querySelector("header .switch"));
+slider(document.querySelector("header img"), 4, document.querySelector("header .switch"));
 
 function scrollSlow(e) {
 	e.preventDefault();

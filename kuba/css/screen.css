@@ -213,15 +213,40 @@ section {
 	clear: both;
 	width: 75%;
 	margin: 0 auto;
-	padding: 20px;
-	padding-top: 10px;
-	line-height: 1.5rem;
+	padding: 50px 20px;
+	font-size: 1.4rem;
+	line-height: 2.5rem;
+}
+
+strong {
+	font-weight: 700;
+}
+
+#about {
+	text-align: center;
+	font-size: 1.4rem;
+	line-height: 2.5rem;
+}
+
+#about p {
+	margin-bottom: 30px;
+}
+
+#about p a {
+	font-weight: 700;
+	text-decoration: none;
+	color: black;
+}
+
+#about img {
+	max-width: 700px;
+	width: 100%;
 }
 
 .row  {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	flex-direction: row;
 }
 
@@ -253,6 +278,10 @@ section {
 	position: relative;
 	width: 50%;
 	margin: 0 15px;
+}
+
+#team {
+	padding: 50px 0;
 }
 
 #team , #contact{
@@ -297,6 +326,8 @@ section {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	margin: 0 10px;
+	text-align: center;
 }
 
 
@@ -344,9 +375,14 @@ section {
 }
 
 #achieve .mousedsc {
-	width: 200px;
-	height: 200px;
-	line-height: 200px;
+	width: 300px;
+	height: 300px;
+	line-height: 300px;
+	color: white;
+}
+
+#achieve img {
+	width: 300px;
 }
 
 #sponsor img {
@@ -501,4 +537,48 @@ section {
 		margin-left: 5px;
 	}
 	
+}
+
+.slider-box {
+	width: 100%;
+	overflow: hidden;
+}
+
+.css-slider {
+	display: flex;
+	align-items: flex-start;
+	width: 133%;
+	position: relative;
+	top: 0;
+	left: 0;
+	margin-top: 30px;
+	animation: 15s slider infinite;
+}
+
+@keyframes slider {
+	0% { left: 0%; }
+	25% {left: 0%}
+	50% {left: -33%}
+	75% {left: -33%}
+	100% { left: 0;}
+}
+
+@keyframes slider-50 {
+	0% { left: 0%; }
+	16.67% {left: 0%}
+	33.33% {left: -50%}
+	50% {left: -50%}
+	66.67% {left: -100%}
+	83.34% {left: -100%}
+	100% { left: 0;}
+}
+
+@media screen and (max-width: 850px) {
+	.css-slider {
+		width: 200%;
+		animation: 20s slider-50 infinite;
+	}
+	.css-slider .column3 {
+		width: 50%;
+	}
 }
