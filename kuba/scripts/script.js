@@ -79,7 +79,7 @@ slider(document.querySelector("header img"), 4, document.querySelector("header .
 function scrollSlow(e) {
 	e.preventDefault();
 	var id = e.target.getAttribute("href");
-	var position = (document.querySelector(id).offsetTop - 100) > 0? (document.querySelector(id).offsetTop - 100) : (document.querySelector(id).offsetTop);
+	var position = (document.querySelector(id).offsetTop - 50) > 0? (document.querySelector(id).offsetTop - 50) : (document.querySelector(id).offsetTop);
 	if (position > document.body.offsetHeight - window.innerHeight) {
 		position = document.body.offsetHeight - window.innerHeight;
 	}

@@ -33,6 +33,7 @@ body {
 	line-height: 1;
 	font-family: 'Ubuntu', sans-serif;
 	font-family: 'Raleway', sans-serif;
+	overflow: hidden;
 }
 
 ol, ul {
@@ -164,7 +165,7 @@ nav {
 	line-height: 50px;
 }
 
-.socialList img {
+nav img {
 	vertical-align: middle;
 	height: 30px;
 }
@@ -209,13 +210,34 @@ h2::after {
 	margin-left: 10px;
 }
 
-section {
+section, footer {
 	clear: both;
 	width: 75%;
 	margin: 0 auto;
 	padding: 50px 20px;
 	font-size: 1.4rem;
 	line-height: 2.5rem;
+}
+
+#car, #sponsor {
+	width: 100%;
+	background-color: #f3f2f2;
+}
+
+footer {
+	width: 100%;
+	padding: 30px;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	background-color: #000;
+	color: white;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+footer a {
+	color: white;
+	text-decoration: none;
 }
 
 strong {
@@ -440,14 +462,17 @@ strong {
 	
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 991px) {
 	section {
 		width: 100%;
 		box-sizing: border-box;
 	}
-	
+}
+
+@media screen and (max-width: 767px) {	
 	.row {
 		flex-direction: column;
+		align-items: center;
 	}
 	
 	#car img {
@@ -573,7 +598,19 @@ strong {
 	100% { left: 0;}
 }
 
-@media screen and (max-width: 850px) {
+@keyframes slider-100 {
+	0% { left: 0%; }
+	12.5% { left: 0%; }
+	25% {left: -100%}
+	37.5% { left: -100%; }
+	50% {left: -200%}
+	62.5% { left: -200%; }
+	75% {left: -300%}
+	87.5% { left: -300%; }
+	100% { left: 0;}
+}
+
+@media screen and (max-width: 920px) {
 	.css-slider {
 		width: 200%;
 		animation: 20s slider-50 infinite;
@@ -581,4 +618,26 @@ strong {
 	.css-slider .column3 {
 		width: 50%;
 	}
+}
+
+@media screen and (max-width: 680px) {
+	.css-slider {
+		width: 400%;
+		animation: 20s slider-100 infinite;
+	}
+	.css-slider .column3 {
+		width: 100%;
+	}
+}
+
+#contact .socialList {
+	justify-content: center;
+	margin: 40px 0 0;
+	width: 100%;
+}
+
+#contact a{
+	color: white;
+	text-decoration: none;
+	font-weight: 700;
 }
