@@ -86,14 +86,14 @@ function scrollSlow(e) {
 		function scroll() {
 			if(window.scrollY) {
 				if( window.scrollY  <  (position - 20)) {
-					window.scrollBy(0, 15);
+					window.scrollBy(0, 30);
 					if(window.innerWidth <= 680) {
 						setTimeout(scroll, 1)
 					} else {
 						setTimeout(scroll, 3);
 					}
 				} else if ( window.scrollY >  (position + 20)) {
-					window.scrollBy(0, -15);
+					window.scrollBy(0, -30);
 					if(window.innerWidth <= 680) {
 						setTimeout(scroll, 1)
 					} else {
@@ -121,11 +121,14 @@ function scrollSlow(e) {
 
 (function buttonVisible() {
 	var button = document.querySelector(".up");
+	var isVisible = false;
 	function buttonVisible() {
-		if(window.scrollY >= 100 || document.documentElement.scrollTop >= 100) {
+		if(!isVisible && window.scrollY >= 100 || document.documentElement.scrollTop >= 100) {
 			button.classList.add("visible");
+			isVisible = true;
 		} else {
 			button.classList.remove("visible");
+			isVisible = false;
 		}
 	}
 	window.addEventListener("scroll", buttonVisible, false);
@@ -153,23 +156,42 @@ function scrollSlow(e) {
 		descriptions[i].addEventListener("mouseleave", hidden, false);
 	};
 })();
-
-function highlightNav() {
+(function highlightNavigation () {
+	var lastI = 100;
 	var sections = document.querySelectorAll("section");
-	for (var i = 0; i < sections.length; i++) {
+	function selectElement (i) {
+		lastI = i;
 		var id = "[href='#" + sections[i].getAttribute("id") + "']";
-		if(window.scrollY >= sections[i].offsetTop - 100 && window.scrollY < sections[i+1].offsetTop - 100 && window.scrollY !== document.body.scrollHeight - window.innerHeight) {
-			document.querySelector(id).parentNode.classList.add("current");
-		} else if (window.scrollY === document.body.scrollHeight - window.innerHeight) {
-			document.querySelector(id).parentNode.classList.remove("current");
-			id = "[href='#" + sections[sections.length - 1].getAttribute("id") + "']";
-			document.querySelector(id).parentNode.classList.add("current");
-		} else {
-			document.querySelector(id).parentNode.classList.remove("current");
-		}
+		var elseId = ".mainNav a:not([href='#" + sections[i].getAttribute("id") + "']).current";
+		var elseNavElement = document.querySelector(elseId);
+		if(elseNavElement) {
+			elseNavElement.classList.remove("current");
+		};
+		document.querySelector(id).classList.add("current");
+		
+	}
+
+	function highlightNav() {
+		for (var i = 0; i < sections.length; i++) {
+			if( i < sections.length - 1 && window.scrollY >= sections[i].offsetTop - 300 && window.scrollY < sections[i+1].offsetTop - 300) {
+				if(i !== lastI || i == 0) {
+					selectElement(i);
+				};
+				break;
+			} else if( i == sections.length - 1 && window.scrollY >= sections[i].offsetTop - 300) {
+				if(i !== lastI) {
+					selectElement(i);
+				};
+				break;
+			} else if (i == 0 && window.scrollY < sections[i].offsetTop - 300 && document.querySelector(".current")){
+				document.querySelector(".current").classList.remove("current");
+			}
+		};
 	};
-};
-window.addEventListener("scroll", highlightNav, false);
+
+	window.addEventListener("scroll", highlightNav, false);
+	
+})();
 
 (function setHeight() {
 	var element = document.querySelectorAll("#team .column");
@@ -178,16 +200,20 @@ window.addEventListener("scroll", highlightNav, false);
 	}
 })();
 
-function animationTeam() {
-	if(window.innerWidth >= 1080) {
-		if(window.scrollY >= document.querySelector("#team").offsetTop - window.innerHeight) {
-			document.querySelector(".column.left").classList.add("animationLeft");
-			document.querySelector(".column.right").classList.add("animationRight");
+(function team() {
+	var isDone = false;
+	function animationTeam() {
+		if(window.innerWidth >= 1080 && !isDone) {
+			if(window.scrollY >= document.querySelector("#team").offsetTop - window.innerHeight) {
+				document.querySelector(".column.left").classList.add("animationLeft");
+				document.querySelector(".column.right").classList.add("animationRight");
+				isDone = true;
+			};
 		};
 	};
-};
 
-window.addEventListener("scroll", animationTeam, false);
+	window.addEventListener("scroll", animationTeam, false);
+})();
 
 function responsiveNav() {
 	var mainNavLi = [].slice.call(document.querySelectorAll(".mainNav li:not(:last-child)"));
